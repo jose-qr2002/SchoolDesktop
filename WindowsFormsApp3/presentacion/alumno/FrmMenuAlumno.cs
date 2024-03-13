@@ -27,20 +27,17 @@ namespace SenatiPractica.presentacion
         }
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
         }
 
         private void FrmMenuPrincipal_Shown(object sender, EventArgs e)
         {
             CargarTodosAlumnos();
-            MessageBox.Show("Bienvenido al Sistema", "Acceso al Sistema",
-            MessageBoxButtons.OK);
-            
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)

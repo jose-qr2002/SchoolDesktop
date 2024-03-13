@@ -92,8 +92,7 @@
             this.txtConeccion.Name = "txtConeccion";
             this.txtConeccion.Size = new System.Drawing.Size(542, 20);
             this.txtConeccion.TabIndex = 5;
-            this.txtConeccion.Text = "Data Source=DESKTOP-VLV57I9\\SQLEXPRESS;Initial Catalog=Senati;Integrated Security" +
-    "=True";
+            this.txtConeccion.Text = "Data Source=.\\Senati;Initial Catalog=Senati;Integrated Security=True";
             // 
             // label3
             // 
