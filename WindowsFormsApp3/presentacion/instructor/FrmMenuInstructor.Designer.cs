@@ -50,7 +50,7 @@
             this.groupBox1.Controls.Add(this.btnIngresar);
             this.groupBox1.Location = new System.Drawing.Point(79, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(642, 239);
+            this.groupBox1.Size = new System.Drawing.Size(751, 377);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Instructores";
@@ -58,7 +58,7 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(7, 192);
+            this.btnRefrescar.Location = new System.Drawing.Point(26, 192);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(90, 35);
             this.btnRefrescar.TabIndex = 8;
@@ -78,14 +78,14 @@
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.RowTemplate.Height = 24;
             this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(480, 212);
+            this.dgvAlumnos.Size = new System.Drawing.Size(596, 342);
             this.dgvAlumnos.TabIndex = 7;
             this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
             this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellContentClick);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(6, 62);
+            this.btnEditar.Location = new System.Drawing.Point(25, 62);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(91, 37);
             this.btnEditar.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(6, 105);
+            this.btnEliminar.Location = new System.Drawing.Point(25, 105);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 37);
             this.btnEliminar.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(6, 148);
+            this.btnBuscar.Location = new System.Drawing.Point(25, 148);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 37);
             this.btnBuscar.TabIndex = 3;
@@ -113,7 +113,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(6, 19);
+            this.btnIngresar.Location = new System.Drawing.Point(25, 19);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(91, 37);
             this.btnIngresar.TabIndex = 2;
@@ -123,7 +123,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(339, 394);
+            this.btnSalir.Location = new System.Drawing.Point(441, 394);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(145, 45);
             this.btnSalir.TabIndex = 4;
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(895, 464);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
             this.Name = "FrmMenuInstructor";

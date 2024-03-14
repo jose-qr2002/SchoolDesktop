@@ -27,26 +27,38 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadInstructor instructor = new EntidadInstructor(txtDni.Text, txtNombres.Text, txtApellidos.Text,txtTelefono.Text,txtDireccion.Text,timeFechaNac.Value,cbSexo.Text,txtEspecialidad.Text,txtTitulo.Text,Double.Parse( txtSalario.Text ));
-
-            int num = _negocioInstructor.InsertarInstructorN(instructor);
-            if (num != 0)
+            try
             {
-                MessageBox.Show("Operacion Satisfactoria");
-                txtDni.Text = "";
-                txtNombres.Text = "";
-                txtApellidos.Text = "";
-                if (IntructorGrillaLoaded != null)
+                EntidadInstructor instructor = new EntidadInstructor(txtDni.Text, txtNombres.Text, txtApellidos.Text, txtTelefono.Text, txtDireccion.Text, timeFechaNac.Value, cbSexo.Text, txtEspecialidad.Text, txtTitulo.Text, Double.Parse(txtSalario.Text));
+                int num = _negocioInstructor.InsertarInstructorN(instructor);
+                if (num != 0)
                 {
-                    IntructorGrillaLoaded(); //Invoco al evento refrescar grilla
+                    MessageBox.Show("Operacion Satisfactoria");
+                    txtDni.Text = "";
+                    txtNombres.Text = "";
+                    txtApellidos.Text = "";
+                    if (IntructorGrillaLoaded != null)
+                    {
+                        IntructorGrillaLoaded(); //Invoco al evento refrescar grilla
+                    }
+                    Hide();
                 }
+                
             }
-            Hide();
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Ingrese todos los campos correctamente");
+                return;
+            }
+
+            
         }
 
         private void FrmIngresarInstructor_Load(object sender, EventArgs e)
         {
-
+            List<string> sexos = new List<string> { "F", "M" };
+            cbSexo.DataSource = sexos;
+            cbSexo.Text = sexos[1];
         }
 
         private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)

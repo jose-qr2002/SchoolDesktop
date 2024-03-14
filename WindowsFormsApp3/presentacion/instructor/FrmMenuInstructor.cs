@@ -28,7 +28,7 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void FrmMenuInstructor_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
