@@ -34,9 +34,8 @@ namespace WindowsFormsApp3.common.instructor
             Nombres = nombres;
             Apellidos = apellidos;
         }
-        public EntidadInstructor(int id, string dni, string nombres, string apellidos, string telefono, string direccion, DateTime fechaNac, string sexo, string especialidad, string titulo, double salario)
+        public EntidadInstructor(string dni, string nombres, string apellidos, string telefono, string direccion, DateTime fechaNac, string sexo, string especialidad, string titulo, double salario)
         {
-            Id = id;
             Dni = dni;
             Nombres = nombres;
             Apellidos = apellidos;
