@@ -39,22 +39,22 @@ namespace WindowsFormsApp3.presentacion.instructor
         private void CargarTodosInstructores()
         {
             //En caso el DataSource es null, no muestra nada en la grilla
-            dgvAlumnos.DataSource = _negocioInstructor.ObtenerTodosInstructoresN();
+            dvgInstructores.DataSource = _negocioInstructor.ObtenerTodosInstructoresN();
             SeleccionarInstructorLoad();
         }
 
         public void SeleccionarInstructorLoad()
         {
 
-            if (dgvAlumnos.Rows.Count == 0)
+            if (dvgInstructores.Rows.Count == 0)
             {
                 return;
             }
 
-            string id = dgvAlumnos.CurrentRow.Cells[0].Value.ToString();
-            string dni = dgvAlumnos.CurrentRow.Cells[1].Value.ToString();
-            string nombres = dgvAlumnos.CurrentRow.Cells[2].Value.ToString();
-            string apellidos = dgvAlumnos.CurrentRow.Cells[3].Value.ToString();
+            string id = dvgInstructores.CurrentRow.Cells[0].Value.ToString();
+            string dni = dvgInstructores.CurrentRow.Cells[1].Value.ToString();
+            string nombres = dvgInstructores.CurrentRow.Cells[2].Value.ToString();
+            string apellidos = dvgInstructores.CurrentRow.Cells[3].Value.ToString();
 
             _instructorSeleccionado.Id = Convert.ToInt32(id);
             _instructorSeleccionado.Dni = dni;
@@ -95,6 +95,26 @@ namespace WindowsFormsApp3.presentacion.instructor
         private void FrmMenuInstructor_Shown(object sender, EventArgs e)
         {
             CargarTodosInstructores();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dvgInstructores.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un instructor!!!");
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("¿Deseas eliminar el registro con dni: " + _instructorSeleccionado.Dni + " ?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+            {
+                int num = _negocioInstructor.EliminarInstructorN(_instructorSeleccionado.Id);
+                if (num != 0)
+                {
+                    CargarTodosInstructores();
+                    MessageBox.Show("Operacion Satisfactoria");
+                }
+            }
         }
     }
 }

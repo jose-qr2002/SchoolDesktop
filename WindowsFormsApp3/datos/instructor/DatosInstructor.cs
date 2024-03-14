@@ -70,5 +70,26 @@ namespace WindowsFormsApp3.datos.instructor
 
         }
 
+        public int EliminarInstructor(int idInstructor)
+        {
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand("eliminarInstructor", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", idInstructor);
+                    int numRes = cmd.ExecuteNonQuery();
+                    return numRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
+
     }
 }

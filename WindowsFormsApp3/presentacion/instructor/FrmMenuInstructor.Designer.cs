@@ -30,20 +30,20 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
-            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.dvgInstructores = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgInstructores)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnRefrescar);
-            this.groupBox1.Controls.Add(this.dgvAlumnos);
+            this.groupBox1.Controls.Add(this.dvgInstructores);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -66,22 +66,22 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // dgvAlumnos
+            // dvgInstructores
             // 
-            this.dgvAlumnos.AllowUserToAddRows = false;
-            this.dgvAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvAlumnos.Location = new System.Drawing.Point(139, 15);
-            this.dgvAlumnos.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvAlumnos.MultiSelect = false;
-            this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.RowTemplate.Height = 24;
-            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(596, 342);
-            this.dgvAlumnos.TabIndex = 7;
-            this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
-            this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellContentClick);
+            this.dvgInstructores.AllowUserToAddRows = false;
+            this.dvgInstructores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgInstructores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgInstructores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dvgInstructores.Location = new System.Drawing.Point(139, 15);
+            this.dvgInstructores.Margin = new System.Windows.Forms.Padding(2);
+            this.dvgInstructores.MultiSelect = false;
+            this.dvgInstructores.Name = "dvgInstructores";
+            this.dvgInstructores.RowTemplate.Height = 24;
+            this.dvgInstructores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgInstructores.Size = new System.Drawing.Size(596, 342);
+            this.dvgInstructores.TabIndex = 7;
+            this.dvgInstructores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
+            this.dvgInstructores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellContentClick);
             // 
             // btnEditar
             // 
@@ -101,6 +101,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -142,7 +143,7 @@
             this.Load += new System.EventHandler(this.FrmMenuInstructor_Load);
             this.Shown += new System.EventHandler(this.FrmMenuInstructor_Shown);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgInstructores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -151,7 +152,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.DataGridView dgvAlumnos;
+        private System.Windows.Forms.DataGridView dvgInstructores;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;

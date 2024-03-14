@@ -88,5 +88,11 @@ namespace WindowsFormsApp3.negocio.instructor
 
             return _datosInstructor.ObtenerTodosInstructores();
         }
+
+        public int EliminarInstructorN(int idAlumno)
+        {
+
+            return _datosInstructor.EliminarInstructor(idAlumno);
+        }
     }
 }
