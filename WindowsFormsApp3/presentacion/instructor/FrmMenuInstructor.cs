@@ -89,7 +89,8 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_instructorSeleccionado.Nombres);
+            FrmEditarInstructor frmEditarInstructor = new FrmEditarInstructor();
+            frmEditarInstructor.ShowDialog();
         }
 
         private void FrmMenuInstructor_Shown(object sender, EventArgs e)
