@@ -94,5 +94,10 @@ namespace WindowsFormsApp3.negocio.instructor
 
             return _datosInstructor.EliminarInstructor(idAlumno);
         }
+
+        public EntidadInstructor BuscarInstructorById(int id)
+        {
+            return _datosInstructor.BuscarInstructorById(id);
+        }
     }
 }

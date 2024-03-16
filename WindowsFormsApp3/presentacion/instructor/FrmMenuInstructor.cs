@@ -89,7 +89,15 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmEditarInstructor frmEditarInstructor = new FrmEditarInstructor();
+
+            FrmEditarInstructor frmEditarInstructor = new FrmEditarInstructor(_instructorSeleccionado);
+            if (dvgInstructores.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccion un Instructor!!!");
+                return;
+            }
+
+            frmEditarInstructor.IntructorGrillaLoaded += CargarTodosInstructores;//Usamos eventos para refrescar la grilla
             frmEditarInstructor.ShowDialog();
         }
 

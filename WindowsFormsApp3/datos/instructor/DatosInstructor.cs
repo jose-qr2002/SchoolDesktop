@@ -91,5 +91,34 @@ namespace WindowsFormsApp3.datos.instructor
             }
         }
 
+        public EntidadInstructor BuscarInstructorById(int idInstructor)
+        {
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("buscarInstructorById", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", idInstructor);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    EntidadInstructor entidadInstructor = new EntidadInstructor();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        entidadInstructor.mapearDatosInstructor(reader);
+                    }
+                    reader.Close();
+                    
+                    return entidadInstructor;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
+
     }
 }

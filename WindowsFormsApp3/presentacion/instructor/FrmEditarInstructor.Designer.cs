@@ -220,6 +220,7 @@
             this.btnGuardar.TabIndex = 29;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmEditarInstructor
             // 
@@ -249,6 +250,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Name = "FrmEditarInstructor";
             this.Text = "Editar Instructor";
+            this.Load += new System.EventHandler(this.FrmEditarInstructor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

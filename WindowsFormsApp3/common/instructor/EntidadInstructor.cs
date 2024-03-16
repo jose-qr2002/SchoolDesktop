@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,5 +50,25 @@ namespace WindowsFormsApp3.common.instructor
         }
 
         public EntidadInstructor() { }
+
+        /// <summary>
+        /// Mapea los datos de un SqlDataReader a una instancia de EntidadInstructor.
+        /// </summary>
+        /// <param name="reader">El SqlDataReader que contiene los datos del instructor.</param>
+        /// <returns>Una instancia de EntidadInstructor con los datos mapeados desde el SqlDataReader.</returns>
+        public void mapearDatosInstructor(SqlDataReader reader)
+        {
+            this.Id = Convert.ToInt32(reader["id"]);
+            this.Dni = reader["dni"].ToString();
+            this.Nombres = reader["nombre"].ToString();
+            this.Apellidos = reader["apellido"].ToString();
+            this.Telefono = reader["telefono"].ToString();
+            this.Direccion = reader["direccion"].ToString();
+            this.FechaNac = Convert.ToDateTime(reader["fechaNacimiento"]);
+            this.Sexo = reader["sexo"].ToString();
+            this.Especialidad = reader["especialidad"].ToString();
+            this.Titulo = reader["titulo"].ToString();
+            this.Salario = Convert.ToDouble(reader["salario"]);
+        }
     }
 }
