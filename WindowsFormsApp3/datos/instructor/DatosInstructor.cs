@@ -139,7 +139,7 @@ namespace WindowsFormsApp3.datos.instructor
                         entidadInstructor.mapearDatosInstructor(reader);
                     }
                     reader.Close();
-                    
+
                     return entidadInstructor;
                 }
             }
@@ -151,5 +151,36 @@ namespace WindowsFormsApp3.datos.instructor
 
         }
 
+        public DataTable BuscarInstructorByTipoAndParametro(ETipoBusquedaInstructor tipoBusquedaInstructor, string parametro)
+        {
+
+            try
+            {
+                int tipo = -1;
+                switch (tipoBusquedaInstructor)
+                {
+                    case ETipoBusquedaInstructor.Dni: tipo = 1; break;
+                    case ETipoBusquedaInstructor.Nombres: tipo = 2; break;
+                    case ETipoBusquedaInstructor.Apellidos: tipo = 3; break;
+                }
+
+                using (SqlCommand cmd = new SqlCommand("buscarInstructorByTipoAndParametro", Connection.Singleton.SqlConnetionFactory))
+                {
+                    DataTable dtData = new DataTable();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Tipo", tipo);
+                    cmd.Parameters.AddWithValue("@Parametro", parametro);
+                    SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                    sqlSda.Fill(dtData);
+                    return dtData;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
     }
 }

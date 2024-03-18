@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.common.instructor;
@@ -171,6 +172,22 @@ namespace WindowsFormsApp3.negocio.instructor
         public EntidadInstructor BuscarInstructorById(int id)
         {
             return _datosInstructor.BuscarInstructorById(id);
+        }
+
+        public DataTable BuscarInstructorByTipoAndParametroN(ETipoBusquedaInstructor tipo, string parametro)
+        {
+
+            //validaciones
+            if (tipo == ETipoBusquedaInstructor.Dni)
+            {//DNI 
+                if (Regex.IsMatch(parametro, "[aeiouAEIOU]", RegexOptions.IgnoreCase))
+                {
+                    MessageBox.Show("El DNI no puede tener vocales");
+                    return null;
+                }
+            }
+
+            return _datosInstructor.BuscarInstructorByTipoAndParametro(tipo, parametro);
         }
     }
 }

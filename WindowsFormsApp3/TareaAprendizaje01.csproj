@@ -49,6 +49,7 @@
     <Compile Include="common\alumno\ETipoBusquedaAlumno.cs" />
     <Compile Include="common\Connection.cs" />
     <Compile Include="common\instructor\EntidadInstructor.cs" />
+    <Compile Include="common\instructor\ETipoBusquedaInstructor.cs" />
     <Compile Include="datos\alumno\DatosAlumno.cs" />
     <Compile Include="datos\instructor\DatosInstructor.cs" />
     <Compile Include="datos\login\DatosLogin.cs" />
@@ -79,6 +80,12 @@
     </Compile>
     <Compile Include="presentacion\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\instructor\FrmBuscarInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\instructor\FrmBuscarInstructor.Designer.cs">
+      <DependentUpon>FrmBuscarInstructor.cs</DependentUpon>
     </Compile>
     <Compile Include="presentacion\instructor\FrmEditarInstructor.cs">
       <SubType>Form</SubType>
@@ -124,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\instructor\FrmBuscarInstructor.resx">
+      <DependentUpon>FrmBuscarInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\instructor\FrmEditarInstructor.resx">
       <DependentUpon>FrmEditarInstructor.cs</DependentUpon>

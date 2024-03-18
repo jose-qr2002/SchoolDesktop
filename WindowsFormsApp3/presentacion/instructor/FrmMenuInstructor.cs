@@ -1,4 +1,5 @@
-﻿using SenatiPractica.negocio.alumno;
+﻿using SenatiPractica.common.alumno;
+using SenatiPractica.negocio.alumno;
 using SenatiPractica.presentacion.alumno;
 using System;
 using System.Collections.Generic;
@@ -123,6 +124,33 @@ namespace WindowsFormsApp3.presentacion.instructor
                     CargarTodosInstructores();
                     MessageBox.Show("Operacion Satisfactoria");
                 }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FrmBuscarInstructor frmBuscarInstructor = new FrmBuscarInstructor();
+            DialogResult dialogResult = frmBuscarInstructor.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                ETipoBusquedaInstructor tipo = frmBuscarInstructor.Tipo;
+                string parametro = frmBuscarInstructor.Parametro;
+
+                DataTable result = _negocioInstructor.BuscarInstructorByTipoAndParametroN(tipo, parametro);
+                if (result != null)
+                {
+
+                    dvgInstructores.DataSource = result;
+                    if (result.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Se encontraron " + result.Rows.Count + " registro(s)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron registros");
+                    }
+                }
+
             }
         }
     }
