@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.presentacion.curso;
 using WindowsFormsApp3.presentacion.instructor;
 
 namespace WindowsFormsApp3.presentacion
@@ -49,7 +50,8 @@ namespace WindowsFormsApp3.presentacion
 
         private void btnCurso_Click(object sender, EventArgs e)
         {
-            
+            FrmMenuCurso frmMenuCurso = new FrmMenuCurso();
+            frmMenuCurso.ShowDialog();
         }
     }
 }

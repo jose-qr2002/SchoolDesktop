@@ -159,7 +159,7 @@
             this.Controls.Add(this.lblCiclo);
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmIngresarCurso";
-            this.Text = "Menú Curso";
+            this.Text = "Ingresar Curso";
             this.ResumeLayout(false);
             this.PerformLayout();
 
