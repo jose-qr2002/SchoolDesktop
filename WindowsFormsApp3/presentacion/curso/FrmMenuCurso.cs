@@ -33,5 +33,11 @@ namespace WindowsFormsApp3.presentacion.curso
             FrmEditarCurso frmEditarCurso = new FrmEditarCurso();
             frmEditarCurso.ShowDialog();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FrmBuscarCurso frmBuscarCurso = new FrmBuscarCurso();
+            frmBuscarCurso.ShowDialog();
+        }
     }
 }
