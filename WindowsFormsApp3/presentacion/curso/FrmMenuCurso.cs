@@ -27,5 +27,11 @@ namespace WindowsFormsApp3.presentacion.curso
         {
             Hide();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            FrmEditarCurso frmEditarCurso = new FrmEditarCurso();
+            frmEditarCurso.ShowDialog();
+        }
     }
 }
