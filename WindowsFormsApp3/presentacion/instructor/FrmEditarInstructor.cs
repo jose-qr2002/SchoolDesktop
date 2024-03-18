@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SenatiPractica.common.alumno;
+using SenatiPractica.negocio.alumno;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +30,32 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            _editarInstructor.Dni = txtDni.Text;
+            _editarInstructor.Nombres = txtNombres.Text;
+            _editarInstructor.Apellidos = txtApellidos.Text;
+            _editarInstructor.Direccion = txtDireccion.Text;
+            _editarInstructor.Telefono = txtTelefono.Text;
+            _editarInstructor.Sexo = cmbSexo.Text;
+            _editarInstructor.Titulo = txtTitulo.Text;
+            _editarInstructor.Especialidad = txtEspecialidad.Text;
+            _editarInstructor.FechaNac = timeFechaNac.Value;
+            _editarInstructor.Salario = Double.Parse(txtSalario.Text);
+            
 
+            int num = _negocioInstructor.EditarInstructorN(_editarInstructor);
+
+            if (num != 0)
+            {
+
+                if (IntructorGrillaLoaded != null)
+                {
+                    IntructorGrillaLoaded(); //Invoco al evento refrescar grilla
+                }
+
+                MessageBox.Show("Operacion Satisfactoria");
+
+                Close();
+            }
         }
 
         private void FrmEditarInstructor_Load(object sender, EventArgs e)

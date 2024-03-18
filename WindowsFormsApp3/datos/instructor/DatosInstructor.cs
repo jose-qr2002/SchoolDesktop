@@ -91,6 +91,37 @@ namespace WindowsFormsApp3.datos.instructor
             }
         }
 
+        public int EditarInstructor(EntidadInstructor instructor)
+        {
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand("editarInstructor", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", instructor.Id);
+                    cmd.Parameters.AddWithValue("@Dni", instructor.Dni);
+                    cmd.Parameters.AddWithValue("@Nombres", instructor.Nombres);
+                    cmd.Parameters.AddWithValue("@Apellidos", instructor.Apellidos);
+                    cmd.Parameters.AddWithValue("@Telefono", instructor.Telefono);
+                    cmd.Parameters.AddWithValue("@Direccion", instructor.Direccion);
+                    cmd.Parameters.AddWithValue("@FechaNacimiento", instructor.FechaNac);
+                    cmd.Parameters.AddWithValue("@Sexo", instructor.Sexo);
+                    cmd.Parameters.AddWithValue("@Especialidad", instructor.Especialidad);
+                    cmd.Parameters.AddWithValue("@Titulo", instructor.Titulo);
+                    cmd.Parameters.AddWithValue("@Salario", instructor.Salario);
+                    int numRes = cmd.ExecuteNonQuery();
+                    return numRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
+
         public EntidadInstructor BuscarInstructorById(int idInstructor)
         {
 
