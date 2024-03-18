@@ -61,6 +61,7 @@
             this.btnCurso.TabIndex = 2;
             this.btnCurso.Text = "Curso";
             this.btnCurso.UseVisualStyleBackColor = true;
+            this.btnCurso.Click += new System.EventHandler(this.btnCurso_Click);
             // 
             // FrmMenuPrincipal
             // 

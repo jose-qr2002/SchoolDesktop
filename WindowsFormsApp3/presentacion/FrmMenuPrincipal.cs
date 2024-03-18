@@ -46,5 +46,10 @@ namespace WindowsFormsApp3.presentacion
         {
 
         }
+
+        private void btnCurso_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
