@@ -153,5 +153,10 @@ namespace WindowsFormsApp3.presentacion.instructor
 
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }
