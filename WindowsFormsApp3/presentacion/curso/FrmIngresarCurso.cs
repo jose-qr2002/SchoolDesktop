@@ -16,6 +16,8 @@ namespace WindowsFormsApp3.presentacion.curso
     {
         private NegocioCurso _negocioCurso = new NegocioCurso();
 
+        public delegate void CursoGrillaLoadEventHandler();
+        public event CursoGrillaLoadEventHandler CursoGrilllaLoaded;
         public FrmIngresarCurso()
         {
             InitializeComponent();
@@ -36,13 +38,13 @@ namespace WindowsFormsApp3.presentacion.curso
                 dtFechaFinalizacion.Value = DateTime.Now;
 
                 MessageBox.Show("Operacion Satisfactoria");
+
                 
-                /*
-                if (AlumnoGrillaLoaded != null)
+                if (CursoGrilllaLoaded != null)
                 {
-                    AlumnoGrillaLoaded(); //Invoco al evento refrescar grilla
+                    CursoGrilllaLoaded(); //Invoco al evento refrescar grilla
                 }
-                */
+                
             }
         }
 

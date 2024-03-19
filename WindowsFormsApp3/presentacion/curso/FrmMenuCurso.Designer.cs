@@ -78,6 +78,7 @@
             this.dvgCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgCursos.Size = new System.Drawing.Size(596, 342);
             this.dvgCursos.TabIndex = 7;
+            this.dvgCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCursos_CellClick);
             // 
             // btnEditar
             // 
