@@ -62,5 +62,32 @@ namespace WindowsFormsApp3.datos.curso
                 return 0;
             }
         }
+
+        public int EditarCurso(EntidadCurso curso)
+        {
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand("editarCurso", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", curso.Id);
+                    cmd.Parameters.AddWithValue("@Codigo", curso.Codigo);
+                    cmd.Parameters.AddWithValue("@Nombre", curso.Nombre);
+                    cmd.Parameters.AddWithValue("@Carrera", curso.Carrera);
+                    cmd.Parameters.AddWithValue("@Ciclo", curso.Ciclo);
+                    cmd.Parameters.AddWithValue("@FechaInicio", curso.FechaInicio);
+                    cmd.Parameters.AddWithValue("@FechaFinalizacion", curso.FechaFinalizacion);
+                    int numRes = cmd.ExecuteNonQuery();
+                    return numRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
     }
 }

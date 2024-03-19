@@ -40,8 +40,8 @@ namespace WindowsFormsApp3.presentacion.curso
             string id = dvgCursos.CurrentRow.Cells[0].Value.ToString();
             string codigo = dvgCursos.CurrentRow.Cells[1].Value.ToString();
             string nombre = dvgCursos.CurrentRow.Cells[2].Value.ToString();
-            string carrera = dvgCursos.CurrentRow.Cells[3].Value.ToString();
-            string ciclo = dvgCursos.CurrentRow.Cells[4].Value.ToString();
+            string ciclo = dvgCursos.CurrentRow.Cells[3].Value.ToString();
+            string carrera = dvgCursos.CurrentRow.Cells[4].Value.ToString();
             string fechaInicio = dvgCursos.CurrentRow.Cells[5].Value.ToString();
             string fechaFinalizacion = dvgCursos.CurrentRow.Cells[6].Value.ToString();
 
@@ -68,7 +68,15 @@ namespace WindowsFormsApp3.presentacion.curso
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmEditarCurso frmEditarCurso = new FrmEditarCurso();
+            if (dvgCursos.CurrentRow == null)
+            {
+
+                MessageBox.Show("Seleccion un alumno!!!");
+                return;
+            }
+
+            FrmEditarCurso frmEditarCurso = new FrmEditarCurso(_cursoSeleccionado);
+            frmEditarCurso.CursoGrilllaLoaded += CargarTodosCursos;
             frmEditarCurso.ShowDialog();
         }
 

@@ -96,6 +96,7 @@
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblFechaFinalizacion
             // 
@@ -160,6 +161,7 @@
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmEditarCurso";
             this.Text = "Editar Curso";
+            this.Shown += new System.EventHandler(this.FrmEditarCurso_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
