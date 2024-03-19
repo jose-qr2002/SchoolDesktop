@@ -1,6 +1,7 @@
 ﻿using SenatiPractica.common.alumno;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,11 @@ namespace WindowsFormsApp3.negocio.curso
     internal class NegocioCurso
     {
         public DatosCurso _datosCurso = new DatosCurso();
+
+        public DataTable ObtenerTodosCursosN()
+        {
+            return _datosCurso.ObtenerTodosCursos();
+        }
 
         public int InsertarCursoN(EntidadCurso curso)
         {

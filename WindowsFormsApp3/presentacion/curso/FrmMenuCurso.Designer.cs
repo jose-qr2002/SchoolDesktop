@@ -137,6 +137,7 @@
             this.Controls.Add(this.btnSalir);
             this.Name = "FrmMenuCurso";
             this.Text = "Menu Curso";
+            this.Shown += new System.EventHandler(this.FrmMenuCurso_Shown);
             this.grpCursos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgCursos)).EndInit();
             this.ResumeLayout(false);

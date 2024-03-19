@@ -13,6 +13,29 @@ namespace WindowsFormsApp3.datos.curso
 {
     internal class DatosCurso
     {
+        public DataTable ObtenerTodosCursos()
+        {
+
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand("obtenerTodosCursos", Connection.Singleton.SqlConnetionFactory))
+                {
+                    DataTable dtData = new DataTable();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                    sqlSda.Fill(dtData);
+                    return dtData;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
+
         public int InsertarCurso(EntidadCurso curso)
         {
 
