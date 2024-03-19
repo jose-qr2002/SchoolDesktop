@@ -80,7 +80,7 @@ namespace WindowsFormsApp3.presentacion.instructor
 
         private void dgvAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CargarTodosInstructores();
+            
         }
 
         private void dgvAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
