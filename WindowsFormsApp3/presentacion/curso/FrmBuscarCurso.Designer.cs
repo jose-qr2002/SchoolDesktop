@@ -75,6 +75,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Name = "FrmBuscarCurso";
             this.Text = "Buscar Curso";
+            this.Shown += new System.EventHandler(this.FrmBuscarCurso_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

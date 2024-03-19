@@ -63,6 +63,7 @@
             this.btnRefrescar.TabIndex = 8;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // dvgCursos
             // 

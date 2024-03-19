@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.common.curso;
@@ -98,6 +99,11 @@ namespace WindowsFormsApp3.negocio.curso
         public int EliminarCursoN(int idCurso)
         {
             return _datosCurso.EliminarCurso(idCurso);
+        }
+
+        public DataTable BuscarCursoByTipoAndParametroN(ETipoBusquedaCurso tipo, string parametro)
+        {
+            return _datosCurso.BuscarCursoByTipoAndParametro(tipo, parametro);
         }
     }
 }

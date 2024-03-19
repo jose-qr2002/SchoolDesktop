@@ -84,7 +84,28 @@ namespace WindowsFormsApp3.presentacion.curso
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FrmBuscarCurso frmBuscarCurso = new FrmBuscarCurso();
-            frmBuscarCurso.ShowDialog();
+            DialogResult dialogResult = frmBuscarCurso.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                ETipoBusquedaCurso tipo = frmBuscarCurso.Tipo;
+                string parametro = frmBuscarCurso.Parametro;
+
+                DataTable result = _negocioCurso.BuscarCursoByTipoAndParametroN(tipo, parametro);
+                if (result != null)
+                {
+
+                    dvgCursos.DataSource = result;
+                    if (result.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Se encontraron " + result.Rows.Count + " registro(s)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron registros");
+                    }
+                }
+
+            }
         }
 
         private void FrmMenuCurso_Shown(object sender, EventArgs e)
@@ -115,6 +136,11 @@ namespace WindowsFormsApp3.presentacion.curso
                     MessageBox.Show("Operacion Satisfactoria");
                 }
             }
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            CargarTodosCursos();
         }
     }
 }
