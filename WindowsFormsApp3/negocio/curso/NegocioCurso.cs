@@ -94,5 +94,10 @@ namespace WindowsFormsApp3.negocio.curso
             int numRes = _datosCurso.EditarCurso(curso);
             return numRes;
         }
+
+        public int EliminarCursoN(int idCurso)
+        {
+            return _datosCurso.EliminarCurso(idCurso);
+        }
     }
 }

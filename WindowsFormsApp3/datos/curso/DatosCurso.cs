@@ -89,5 +89,26 @@ namespace WindowsFormsApp3.datos.curso
                 return 0;
             }
         }
+
+        public int EliminarCurso(int idCurso)
+        {
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand("eliminarCurso", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", idCurso);
+                    int numRes = cmd.ExecuteNonQuery();
+                    return numRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
     }
 }

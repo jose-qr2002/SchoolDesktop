@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.common.curso;
 using WindowsFormsApp3.negocio.curso;
+using WindowsFormsApp3.negocio.instructor;
 
 namespace WindowsFormsApp3.presentacion.curso
 {
@@ -94,6 +95,26 @@ namespace WindowsFormsApp3.presentacion.curso
         private void dvgCursos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SeleccionarCursoLoad();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dvgCursos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un Curso!!!");
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("¿Deseas eliminar el registro con nombre: " + _cursoSeleccionado.Nombre + " ?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+            {
+                int num = _negocioCurso.EliminarCursoN(_cursoSeleccionado.Id);
+                if (num != 0)
+                {
+                    CargarTodosCursos();
+                    MessageBox.Show("Operacion Satisfactoria");
+                }
+            }
         }
     }
 }
