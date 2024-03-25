@@ -52,6 +52,7 @@
     <Compile Include="common\curso\ETipoBusquedaCurso.cs" />
     <Compile Include="common\instructor\EntidadInstructor.cs" />
     <Compile Include="common\instructor\ETipoBusquedaInstructor.cs" />
+    <Compile Include="common\matricula\EntidadMatricula.cs" />
     <Compile Include="datos\alumno\DatosAlumno.cs" />
     <Compile Include="datos\curso\DatosCurso.cs" />
     <Compile Include="datos\instructor\DatosInstructor.cs" />
