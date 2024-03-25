@@ -73,6 +73,7 @@
             this.btnMatricula.TabIndex = 3;
             this.btnMatricula.Text = "Matricula";
             this.btnMatricula.UseVisualStyleBackColor = true;
+            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
             // 
             // btnAsignacion
             // 

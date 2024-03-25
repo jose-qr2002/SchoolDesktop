@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.presentacion.curso;
 using WindowsFormsApp3.presentacion.instructor;
+using WindowsFormsApp3.presentacion.matricula;
 
 namespace WindowsFormsApp3.presentacion
 {
@@ -52,6 +53,12 @@ namespace WindowsFormsApp3.presentacion
         {
             FrmMenuCurso frmMenuCurso = new FrmMenuCurso();
             frmMenuCurso.ShowDialog();
+        }
+
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            FrmMenuMatricula frmMenuMatricula = new FrmMenuMatricula();
+            frmMenuMatricula.ShowDialog();
         }
     }
 }
