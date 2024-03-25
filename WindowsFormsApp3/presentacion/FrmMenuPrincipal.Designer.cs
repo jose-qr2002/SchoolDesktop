@@ -31,6 +31,8 @@
             this.btnAlumno = new System.Windows.Forms.Button();
             this.btnInstructor = new System.Windows.Forms.Button();
             this.btnCurso = new System.Windows.Forms.Button();
+            this.btnMatricula = new System.Windows.Forms.Button();
+            this.btnAsignacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlumno
@@ -63,11 +65,31 @@
             this.btnCurso.UseVisualStyleBackColor = true;
             this.btnCurso.Click += new System.EventHandler(this.btnCurso_Click);
             // 
+            // btnMatricula
+            // 
+            this.btnMatricula.Location = new System.Drawing.Point(438, 73);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(109, 44);
+            this.btnMatricula.TabIndex = 3;
+            this.btnMatricula.Text = "Matricula";
+            this.btnMatricula.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignacion
+            // 
+            this.btnAsignacion.Location = new System.Drawing.Point(572, 73);
+            this.btnAsignacion.Name = "btnAsignacion";
+            this.btnAsignacion.Size = new System.Drawing.Size(109, 44);
+            this.btnAsignacion.TabIndex = 4;
+            this.btnAsignacion.Text = "Asignacion";
+            this.btnAsignacion.UseVisualStyleBackColor = true;
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAsignacion);
+            this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.btnCurso);
             this.Controls.Add(this.btnInstructor);
             this.Controls.Add(this.btnAlumno);
@@ -85,5 +107,7 @@
         private System.Windows.Forms.Button btnAlumno;
         private System.Windows.Forms.Button btnInstructor;
         private System.Windows.Forms.Button btnCurso;
+        private System.Windows.Forms.Button btnMatricula;
+        private System.Windows.Forms.Button btnAsignacion;
     }
 }
