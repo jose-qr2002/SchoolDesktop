@@ -137,7 +137,7 @@
             this.lblApellidos.TabIndex = 13;
             this.lblApellidos.Text = "N/A";
             // 
-            // FrnMenuMatricula
+            // FrmMenuMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,8 +152,9 @@
             this.Controls.Add(this.lblBusquedaDniTitulo);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.btnBusquedaDni);
-            this.Name = "FrnMenuMatricula";
+            this.Name = "FrmMenuMatricula";
             this.Text = "FrnMenuMatricula";
+            this.Shown += new System.EventHandler(this.FrmMenuMatricula_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
