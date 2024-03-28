@@ -52,7 +52,7 @@ namespace WindowsFormsApp3.presentacion.matricula
                 lblNombres.Text = "";
                 return;
             }
-
+            MessageBox.Show("Alumno Encontrado");
             idAlumnoBuscado = int.Parse( resultado.Rows[0]["id"].ToString());
             lblNombres.Text = resultado.Rows[0]["nombres"].ToString();
             lblApellidos.Text = resultado.Rows[0]["apellidos"].ToString();
