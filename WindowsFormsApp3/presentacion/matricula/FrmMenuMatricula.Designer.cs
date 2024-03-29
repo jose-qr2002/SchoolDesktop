@@ -41,7 +41,7 @@
             this.lblBusquedaCursoTitulo = new System.Windows.Forms.Label();
             this.txtBusquedaCurso = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCursoNombre = new System.Windows.Forms.Label();
             this.cmbTipoBusquedaCurso = new System.Windows.Forms.ComboBox();
             this.btnBuscarCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).BeginInit();
@@ -170,14 +170,14 @@
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre:";
             // 
-            // label2
+            // lblCursoNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(524, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "N/A";
+            this.lblCursoNombre.AutoSize = true;
+            this.lblCursoNombre.Location = new System.Drawing.Point(524, 82);
+            this.lblCursoNombre.Name = "lblCursoNombre";
+            this.lblCursoNombre.Size = new System.Drawing.Size(27, 13);
+            this.lblCursoNombre.TabIndex = 17;
+            this.lblCursoNombre.Text = "N/A";
             // 
             // cmbTipoBusquedaCurso
             // 
@@ -198,6 +198,7 @@
             this.btnBuscarCurso.TabIndex = 19;
             this.btnBuscarCurso.Text = "Buscar";
             this.btnBuscarCurso.UseVisualStyleBackColor = true;
+            this.btnBuscarCurso.Click += new System.EventHandler(this.btnBuscarCurso_Click);
             // 
             // FrmMenuMatricula
             // 
@@ -206,7 +207,7 @@
             this.ClientSize = new System.Drawing.Size(855, 415);
             this.Controls.Add(this.btnBuscarCurso);
             this.Controls.Add(this.cmbTipoBusquedaCurso);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCursoNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtBusquedaCurso);
             this.Controls.Add(this.lblBusquedaCursoTitulo);
@@ -244,7 +245,7 @@
         private System.Windows.Forms.Label lblBusquedaCursoTitulo;
         private System.Windows.Forms.TextBox txtBusquedaCurso;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCursoNombre;
         private System.Windows.Forms.ComboBox cmbTipoBusquedaCurso;
         private System.Windows.Forms.Button btnBuscarCurso;
     }

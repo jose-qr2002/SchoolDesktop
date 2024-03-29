@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.common.curso;
+using WindowsFormsApp3.negocio.curso;
 using WindowsFormsApp3.negocio.instructor;
 using WindowsFormsApp3.negocio.matricula;
 
@@ -18,6 +20,8 @@ namespace WindowsFormsApp3.presentacion.matricula
     {
         private NegocioMatricula _negocioMatriculaN = new NegocioMatricula();
         private NegocioAlumno _negocioAlumnoN = new NegocioAlumno();
+        private NegocioCurso _negocioCursoN = new NegocioCurso();
+        // IDs
         public int idAlumnoBuscado;
         public FrmMenuMatricula()
         {
@@ -27,6 +31,7 @@ namespace WindowsFormsApp3.presentacion.matricula
         private void FrmMenuMatricula_Shown(object sender, EventArgs e)
         {
             CargarTodasMatriculas();
+            cmbTipoBusquedaCurso.SelectedIndex = 0;
         }
 
         private void CargarTodasMatriculas()
@@ -56,6 +61,32 @@ namespace WindowsFormsApp3.presentacion.matricula
             idAlumnoBuscado = int.Parse( resultado.Rows[0]["id"].ToString());
             lblNombres.Text = resultado.Rows[0]["nombres"].ToString();
             lblApellidos.Text = resultado.Rows[0]["apellidos"].ToString();
+        }
+
+        private void btnBuscarCurso_Click(object sender, EventArgs e)
+        {
+            string parametro = txtBusquedaCurso.Text;
+            ETipoBusquedaCurso tipo = new ETipoBusquedaCurso();
+            switch (cmbTipoBusquedaCurso.SelectedIndex)
+            {
+                case 0: tipo = ETipoBusquedaCurso.Codigo; break;
+                case 1: tipo = ETipoBusquedaCurso.Nombre; break;
+            }
+            DataTable resultado = _negocioCursoN.BuscarCursoByTipoAndParametroN(tipo, parametro);
+            if (resultado == null)
+            {
+                MessageBox.Show("No se encontraron resultados");
+                return;
+            }
+            if (resultado.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron resultados");
+                lblCursoNombre.Text = "";
+                return;
+            }
+            MessageBox.Show("Curso Encontrado");
+            idAlumnoBuscado = int.Parse(resultado.Rows[0]["id"].ToString());
+            lblCursoNombre.Text = resultado.Rows[0]["nombre"].ToString();
         }
     }
 }
