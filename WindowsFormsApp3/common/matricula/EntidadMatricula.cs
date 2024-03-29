@@ -8,10 +8,10 @@ namespace WindowsFormsApp3.common.matricula
 {
     public class EntidadMatricula
     {
-        private int Id { get; set; }
-        private int IdAlumno { get; set; }
-        private int IdCurso { get; set; }
-        private string AnioAcademico { get; set; }
+        public int Id { get; set; }
+        public int IdAlumno { get; set; }
+        public int IdCurso { get; set; }
+        public string AnioAcademico { get; set; }
 
         public EntidadMatricula() { }
     }

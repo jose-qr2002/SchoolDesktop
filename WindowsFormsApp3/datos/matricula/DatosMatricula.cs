@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.common.matricula;
 
 namespace WindowsFormsApp3.datos.matricula
 {
@@ -33,6 +34,28 @@ namespace WindowsFormsApp3.datos.matricula
                 return null;
             }
 
+        }
+
+        public int InsertarMatricula(EntidadMatricula matricula)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("insertarMatricula", Connection.Singleton.SqlConnetionFactory))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdAlumno", matricula.IdAlumno);
+                    cmd.Parameters.AddWithValue("@IdCurso", matricula.IdCurso);
+                    cmd.Parameters.AddWithValue("@AnioAcademico", matricula.AnioAcademico);
+                    int numRes = cmd.ExecuteNonQuery();
+                    return numRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
         }
     }
 }
