@@ -88,5 +88,10 @@ namespace WindowsFormsApp3.presentacion.matricula
             idAlumnoBuscado = int.Parse(resultado.Rows[0]["id"].ToString());
             lblCursoNombre.Text = resultado.Rows[0]["nombre"].ToString();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

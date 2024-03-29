@@ -44,6 +44,7 @@
             this.lblCursoNombre = new System.Windows.Forms.Label();
             this.cmbTipoBusquedaCurso = new System.Windows.Forms.ComboBox();
             this.btnBuscarCurso = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,9 +129,9 @@
             // 
             // btnMatricula
             // 
-            this.btnMatricula.Location = new System.Drawing.Point(746, 47);
+            this.btnMatricula.Location = new System.Drawing.Point(735, 50);
             this.btnMatricula.Name = "btnMatricula";
-            this.btnMatricula.Size = new System.Drawing.Size(75, 47);
+            this.btnMatricula.Size = new System.Drawing.Size(86, 28);
             this.btnMatricula.TabIndex = 12;
             this.btnMatricula.Text = "Matricular";
             this.btnMatricula.UseVisualStyleBackColor = true;
@@ -200,11 +201,22 @@
             this.btnBuscarCurso.UseVisualStyleBackColor = true;
             this.btnBuscarCurso.Click += new System.EventHandler(this.btnBuscarCurso_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(374, 411);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(119, 42);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmMenuMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 415);
+            this.ClientSize = new System.Drawing.Size(848, 476);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBuscarCurso);
             this.Controls.Add(this.cmbTipoBusquedaCurso);
             this.Controls.Add(this.lblCursoNombre);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.Label lblCursoNombre;
         private System.Windows.Forms.ComboBox cmbTipoBusquedaCurso;
         private System.Windows.Forms.Button btnBuscarCurso;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
