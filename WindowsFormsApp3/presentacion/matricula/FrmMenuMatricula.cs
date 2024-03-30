@@ -23,6 +23,7 @@ namespace WindowsFormsApp3.presentacion.matricula
         private NegocioCurso _negocioCursoN = new NegocioCurso();
         // IDs
         public int idAlumnoBuscado;
+        public int idCursoBuscado;
         public FrmMenuMatricula()
         {
             InitializeComponent();
@@ -85,7 +86,7 @@ namespace WindowsFormsApp3.presentacion.matricula
                 return;
             }
             MessageBox.Show("Curso Encontrado");
-            idAlumnoBuscado = int.Parse(resultado.Rows[0]["id"].ToString());
+            idCursoBuscado = int.Parse(resultado.Rows[0]["id"].ToString());
             lblCursoNombre.Text = resultado.Rows[0]["nombre"].ToString();
         }
 
