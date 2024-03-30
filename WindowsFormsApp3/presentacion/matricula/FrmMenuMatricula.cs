@@ -109,9 +109,12 @@ namespace WindowsFormsApp3.presentacion.matricula
                 idAlumnoBuscado = 0;
                 idCursoBuscado = 0;
                 cmbAnioAcademico.SelectedIndex = 0;
-                lblNombres.Text = "";
-                lblCursoNombre.Text = "";
-                lblApellidos.Text = "";
+                lblNombres.Text = "N/A";
+                lblCursoNombre.Text = "N/A";
+                lblApellidos.Text = "M/A";
+                txtBusquedaCurso.Text = "";
+                txtDni.Text = "";
+         
                 MessageBox.Show("Matricula Ingresada");
                 CargarTodasMatriculas();
             }
