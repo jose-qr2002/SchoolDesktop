@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp3.common.matricula;
 using WindowsFormsApp3.datos.instructor;
 using WindowsFormsApp3.datos.matricula;
 
@@ -16,6 +17,11 @@ namespace WindowsFormsApp3.negocio.matricula
         {
 
             return _datosMatricula.ObtenerTodosMatriculas();
+        }
+
+        public int InsertarMatriculaN(EntidadMatricula matricula)
+        {
+            return _datosMatricula.InsertarMatricula(matricula);
         }
     }
 }

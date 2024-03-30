@@ -93,5 +93,10 @@ namespace WindowsFormsApp3.presentacion.matricula
         {
             Hide();
         }
+
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

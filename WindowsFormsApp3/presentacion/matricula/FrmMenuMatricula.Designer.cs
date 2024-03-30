@@ -135,6 +135,7 @@
             this.btnMatricula.TabIndex = 12;
             this.btnMatricula.Text = "Matricular";
             this.btnMatricula.UseVisualStyleBackColor = true;
+            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
             // 
             // lblApellidos
             // 
