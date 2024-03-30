@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.common.curso;
+using WindowsFormsApp3.common.matricula;
 using WindowsFormsApp3.negocio.curso;
 using WindowsFormsApp3.negocio.instructor;
 using WindowsFormsApp3.negocio.matricula;
@@ -98,7 +99,23 @@ namespace WindowsFormsApp3.presentacion.matricula
 
         private void btnMatricula_Click(object sender, EventArgs e)
         {
-            
+            EntidadMatricula nuevaMatricula = new EntidadMatricula();
+            nuevaMatricula.IdAlumno = idAlumnoBuscado;
+            nuevaMatricula.IdCurso = idCursoBuscado;
+            nuevaMatricula.AnioAcademico = cmbAnioAcademico.Text;
+            int resultado = _negocioMatriculaN.InsertarMatriculaN(nuevaMatricula);
+            if (resultado != 0)
+            {
+                idAlumnoBuscado = 0;
+                idCursoBuscado = 0;
+                cmbAnioAcademico.SelectedIndex = 0;
+                lblNombres.Text = "";
+                lblCursoNombre.Text = "";
+                lblApellidos.Text = "";
+                MessageBox.Show("Matricula Ingresada");
+                CargarTodasMatriculas();
+            }
+
         }
     }
 }
