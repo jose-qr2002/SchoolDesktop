@@ -45,6 +45,8 @@
             this.cmbTipoBusquedaCurso = new System.Windows.Forms.ComboBox();
             this.btnBuscarCurso = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.lblEtiquetaAnioAcademico = new System.Windows.Forms.Label();
+            this.cmbAnioAcademico = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,11 +214,34 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblEtiquetaAnioAcademico
+            // 
+            this.lblEtiquetaAnioAcademico.AutoSize = true;
+            this.lblEtiquetaAnioAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEtiquetaAnioAcademico.Location = new System.Drawing.Point(38, 127);
+            this.lblEtiquetaAnioAcademico.Name = "lblEtiquetaAnioAcademico";
+            this.lblEtiquetaAnioAcademico.Size = new System.Drawing.Size(140, 22);
+            this.lblEtiquetaAnioAcademico.TabIndex = 21;
+            this.lblEtiquetaAnioAcademico.Text = "Año Academico:";
+            // 
+            // cmbAnioAcademico
+            // 
+            this.cmbAnioAcademico.FormattingEnabled = true;
+            this.cmbAnioAcademico.Items.AddRange(new object[] {
+            "2024-I",
+            "2024-II"});
+            this.cmbAnioAcademico.Location = new System.Drawing.Point(184, 129);
+            this.cmbAnioAcademico.Name = "cmbAnioAcademico";
+            this.cmbAnioAcademico.Size = new System.Drawing.Size(73, 21);
+            this.cmbAnioAcademico.TabIndex = 22;
+            // 
             // FrmMenuMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 476);
+            this.Controls.Add(this.cmbAnioAcademico);
+            this.Controls.Add(this.lblEtiquetaAnioAcademico);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBuscarCurso);
             this.Controls.Add(this.cmbTipoBusquedaCurso);
@@ -262,5 +287,7 @@
         private System.Windows.Forms.ComboBox cmbTipoBusquedaCurso;
         private System.Windows.Forms.Button btnBuscarCurso;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblEtiquetaAnioAcademico;
+        private System.Windows.Forms.ComboBox cmbAnioAcademico;
     }
 }

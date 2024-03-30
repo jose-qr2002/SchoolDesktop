@@ -33,6 +33,7 @@ namespace WindowsFormsApp3.presentacion.matricula
         {
             CargarTodasMatriculas();
             cmbTipoBusquedaCurso.SelectedIndex = 0;
+            cmbAnioAcademico.SelectedIndex = 0;
         }
 
         private void CargarTodasMatriculas()
