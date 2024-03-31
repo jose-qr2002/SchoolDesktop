@@ -51,9 +51,22 @@ namespace WindowsFormsApp3.datos.matricula
 
                 }
             }
+            catch (SqlException ex)
+            {
+                // Si la excepción es por violación de la clave única
+                if (ex.Number == 2627)
+                {
+                    MessageBox.Show("Error: Ya existe una matrícula para este alumno en este curso y año académico.");
+                }
+                else
+                {
+                    MessageBox.Show("Error del sistema");
+                }
+                return 0;
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error general: " + ex.Message);
                 return 0;
             }
         }
