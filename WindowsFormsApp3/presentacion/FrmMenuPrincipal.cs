@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.presentacion.asignacion;
 using WindowsFormsApp3.presentacion.curso;
 using WindowsFormsApp3.presentacion.instructor;
 using WindowsFormsApp3.presentacion.matricula;
@@ -59,6 +60,12 @@ namespace WindowsFormsApp3.presentacion
         {
             FrmMenuMatricula frmMenuMatricula = new FrmMenuMatricula();
             frmMenuMatricula.ShowDialog();
+        }
+
+        private void btnAsignacion_Click(object sender, EventArgs e)
+        {
+            FrmMenuAsignacion frmMenuAsignacion = new FrmMenuAsignacion();
+            frmMenuAsignacion.ShowDialog();
         }
     }
 }

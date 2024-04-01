@@ -82,6 +82,12 @@
     <Compile Include="presentacion\alumno\FrmIngresarAlumno.Designer.cs">
       <DependentUpon>FrmIngresarAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\asignacion\FrmMenuAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\asignacion\FrmMenuAsignacion.Designer.cs">
+      <DependentUpon>FrmMenuAsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentacion\curso\FrmBuscarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\alumno\FrmIngresarAlumno.resx">
       <DependentUpon>FrmIngresarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\asignacion\FrmMenuAsignacion.resx">
+      <DependentUpon>FrmMenuAsignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\curso\FrmBuscarCurso.resx">
       <DependentUpon>FrmBuscarCurso.cs</DependentUpon>

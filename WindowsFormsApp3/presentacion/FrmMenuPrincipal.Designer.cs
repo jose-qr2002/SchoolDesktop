@@ -83,6 +83,7 @@
             this.btnAsignacion.TabIndex = 4;
             this.btnAsignacion.Text = "Asignacion";
             this.btnAsignacion.UseVisualStyleBackColor = true;
+            this.btnAsignacion.Click += new System.EventHandler(this.btnAsignacion_Click);
             // 
             // FrmMenuPrincipal
             // 
