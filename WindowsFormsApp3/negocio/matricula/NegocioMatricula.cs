@@ -41,5 +41,10 @@ namespace WindowsFormsApp3.negocio.matricula
 
             return _datosMatricula.InsertarMatricula(matricula);
         }
+
+        public DataTable buscarInstructoresN(EntidadMatricula matricula)
+        {
+            return _datosMatricula.buscarInstructores(matricula);
+        }
     }
 }

@@ -101,6 +101,7 @@
             this.dvgMatriculados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgMatriculados.Size = new System.Drawing.Size(779, 220);
             this.dvgMatriculados.TabIndex = 8;
+            this.dvgMatriculados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgMatriculados_CellClick);
             // 
             // lblNombresEtiqueta
             // 
