@@ -33,21 +33,21 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBuscarCurso = new System.Windows.Forms.Button();
             this.cmbTipoBusquedaCurso = new System.Windows.Forms.ComboBox();
-            this.lblCursoNombre = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblNombreCurso = new System.Windows.Forms.Label();
+            this.lblEtiquetaNombreCurso = new System.Windows.Forms.Label();
             this.txtBusquedaCurso = new System.Windows.Forms.TextBox();
             this.lblBusquedaCursoTitulo = new System.Windows.Forms.Label();
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.btnMatricula = new System.Windows.Forms.Button();
-            this.lblNombres = new System.Windows.Forms.Label();
+            this.lblApellidosInstructor = new System.Windows.Forms.Label();
+            this.btnAsignacion = new System.Windows.Forms.Button();
+            this.lblNombresInstructor = new System.Windows.Forms.Label();
             this.lblApellidosEtiqueta = new System.Windows.Forms.Label();
             this.lblNombresEtiqueta = new System.Windows.Forms.Label();
-            this.dvgMatriculados = new System.Windows.Forms.DataGridView();
-            this.lblDatosAlumnoTitulo = new System.Windows.Forms.Label();
+            this.dvgAsignaciones = new System.Windows.Forms.DataGridView();
+            this.lblDatosInstructorTitulo = new System.Windows.Forms.Label();
             this.lblBusquedaInstructoresTitulo = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.btnBusquedaDni = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAsignaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAnioAcademico
@@ -100,23 +100,23 @@
             this.cmbTipoBusquedaCurso.Size = new System.Drawing.Size(104, 21);
             this.cmbTipoBusquedaCurso.TabIndex = 37;
             // 
-            // lblCursoNombre
+            // lblNombreCurso
             // 
-            this.lblCursoNombre.AutoSize = true;
-            this.lblCursoNombre.Location = new System.Drawing.Point(430, 100);
-            this.lblCursoNombre.Name = "lblCursoNombre";
-            this.lblCursoNombre.Size = new System.Drawing.Size(27, 13);
-            this.lblCursoNombre.TabIndex = 36;
-            this.lblCursoNombre.Text = "N/A";
+            this.lblNombreCurso.AutoSize = true;
+            this.lblNombreCurso.Location = new System.Drawing.Point(430, 100);
+            this.lblNombreCurso.Name = "lblNombreCurso";
+            this.lblNombreCurso.Size = new System.Drawing.Size(27, 13);
+            this.lblNombreCurso.TabIndex = 36;
+            this.lblNombreCurso.Text = "N/A";
             // 
-            // lblNombre
+            // lblEtiquetaNombreCurso
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(332, 100);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(92, 13);
-            this.lblNombre.TabIndex = 35;
-            this.lblNombre.Text = "Nombre de Curso:";
+            this.lblEtiquetaNombreCurso.AutoSize = true;
+            this.lblEtiquetaNombreCurso.Location = new System.Drawing.Point(332, 100);
+            this.lblEtiquetaNombreCurso.Name = "lblEtiquetaNombreCurso";
+            this.lblEtiquetaNombreCurso.Size = new System.Drawing.Size(92, 13);
+            this.lblEtiquetaNombreCurso.TabIndex = 35;
+            this.lblEtiquetaNombreCurso.Text = "Nombre de Curso:";
             // 
             // txtBusquedaCurso
             // 
@@ -135,32 +135,32 @@
             this.lblBusquedaCursoTitulo.TabIndex = 33;
             this.lblBusquedaCursoTitulo.Text = "Busqueda de Curso";
             // 
-            // lblApellidos
+            // lblApellidosInstructor
             // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Location = new System.Drawing.Point(83, 178);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(27, 13);
-            this.lblApellidos.TabIndex = 32;
-            this.lblApellidos.Text = "N/A";
+            this.lblApellidosInstructor.AutoSize = true;
+            this.lblApellidosInstructor.Location = new System.Drawing.Point(83, 178);
+            this.lblApellidosInstructor.Name = "lblApellidosInstructor";
+            this.lblApellidosInstructor.Size = new System.Drawing.Size(27, 13);
+            this.lblApellidosInstructor.TabIndex = 32;
+            this.lblApellidosInstructor.Text = "N/A";
             // 
-            // btnMatricula
+            // btnAsignacion
             // 
-            this.btnMatricula.Location = new System.Drawing.Point(322, 212);
-            this.btnMatricula.Name = "btnMatricula";
-            this.btnMatricula.Size = new System.Drawing.Size(86, 28);
-            this.btnMatricula.TabIndex = 31;
-            this.btnMatricula.Text = "Matricular";
-            this.btnMatricula.UseVisualStyleBackColor = true;
+            this.btnAsignacion.Location = new System.Drawing.Point(322, 212);
+            this.btnAsignacion.Name = "btnAsignacion";
+            this.btnAsignacion.Size = new System.Drawing.Size(86, 28);
+            this.btnAsignacion.TabIndex = 31;
+            this.btnAsignacion.Text = "Asignar";
+            this.btnAsignacion.UseVisualStyleBackColor = true;
             // 
-            // lblNombres
+            // lblNombresInstructor
             // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(83, 154);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(27, 13);
-            this.lblNombres.TabIndex = 30;
-            this.lblNombres.Text = "N/A";
+            this.lblNombresInstructor.AutoSize = true;
+            this.lblNombresInstructor.Location = new System.Drawing.Point(83, 154);
+            this.lblNombresInstructor.Name = "lblNombresInstructor";
+            this.lblNombresInstructor.Size = new System.Drawing.Size(27, 13);
+            this.lblNombresInstructor.TabIndex = 30;
+            this.lblNombresInstructor.Text = "N/A";
             // 
             // lblApellidosEtiqueta
             // 
@@ -180,30 +180,30 @@
             this.lblNombresEtiqueta.TabIndex = 28;
             this.lblNombresEtiqueta.Text = "Nombres:";
             // 
-            // dvgMatriculados
+            // dvgAsignaciones
             // 
-            this.dvgMatriculados.AllowUserToAddRows = false;
-            this.dvgMatriculados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dvgMatriculados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgMatriculados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dvgMatriculados.Location = new System.Drawing.Point(17, 276);
-            this.dvgMatriculados.Margin = new System.Windows.Forms.Padding(2);
-            this.dvgMatriculados.MultiSelect = false;
-            this.dvgMatriculados.Name = "dvgMatriculados";
-            this.dvgMatriculados.RowTemplate.Height = 24;
-            this.dvgMatriculados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgMatriculados.Size = new System.Drawing.Size(722, 220);
-            this.dvgMatriculados.TabIndex = 27;
+            this.dvgAsignaciones.AllowUserToAddRows = false;
+            this.dvgAsignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgAsignaciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dvgAsignaciones.Location = new System.Drawing.Point(17, 276);
+            this.dvgAsignaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.dvgAsignaciones.MultiSelect = false;
+            this.dvgAsignaciones.Name = "dvgAsignaciones";
+            this.dvgAsignaciones.RowTemplate.Height = 24;
+            this.dvgAsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgAsignaciones.Size = new System.Drawing.Size(722, 220);
+            this.dvgAsignaciones.TabIndex = 27;
             // 
-            // lblDatosAlumnoTitulo
+            // lblDatosInstructorTitulo
             // 
-            this.lblDatosAlumnoTitulo.AutoSize = true;
-            this.lblDatosAlumnoTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosAlumnoTitulo.Location = new System.Drawing.Point(28, 119);
-            this.lblDatosAlumnoTitulo.Name = "lblDatosAlumnoTitulo";
-            this.lblDatosAlumnoTitulo.Size = new System.Drawing.Size(165, 22);
-            this.lblDatosAlumnoTitulo.TabIndex = 26;
-            this.lblDatosAlumnoTitulo.Text = "Datos del Instructor";
+            this.lblDatosInstructorTitulo.AutoSize = true;
+            this.lblDatosInstructorTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosInstructorTitulo.Location = new System.Drawing.Point(28, 119);
+            this.lblDatosInstructorTitulo.Name = "lblDatosInstructorTitulo";
+            this.lblDatosInstructorTitulo.Size = new System.Drawing.Size(165, 22);
+            this.lblDatosInstructorTitulo.TabIndex = 26;
+            this.lblDatosInstructorTitulo.Text = "Datos del Instructor";
             // 
             // lblBusquedaInstructoresTitulo
             // 
@@ -241,23 +241,23 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBuscarCurso);
             this.Controls.Add(this.cmbTipoBusquedaCurso);
-            this.Controls.Add(this.lblCursoNombre);
-            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblNombreCurso);
+            this.Controls.Add(this.lblEtiquetaNombreCurso);
             this.Controls.Add(this.txtBusquedaCurso);
             this.Controls.Add(this.lblBusquedaCursoTitulo);
-            this.Controls.Add(this.lblApellidos);
-            this.Controls.Add(this.btnMatricula);
-            this.Controls.Add(this.lblNombres);
+            this.Controls.Add(this.lblApellidosInstructor);
+            this.Controls.Add(this.btnAsignacion);
+            this.Controls.Add(this.lblNombresInstructor);
             this.Controls.Add(this.lblApellidosEtiqueta);
             this.Controls.Add(this.lblNombresEtiqueta);
-            this.Controls.Add(this.dvgMatriculados);
-            this.Controls.Add(this.lblDatosAlumnoTitulo);
+            this.Controls.Add(this.dvgAsignaciones);
+            this.Controls.Add(this.lblDatosInstructorTitulo);
             this.Controls.Add(this.lblBusquedaInstructoresTitulo);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.btnBusquedaDni);
             this.Name = "FrmMenuAsignacion";
-            this.Text = "FrmMenuAsignacion";
-            ((System.ComponentModel.ISupportInitialize)(this.dvgMatriculados)).EndInit();
+            this.Text = "Menu Asignacion";
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAsignaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,17 +270,17 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBuscarCurso;
         private System.Windows.Forms.ComboBox cmbTipoBusquedaCurso;
-        private System.Windows.Forms.Label lblCursoNombre;
-        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNombreCurso;
+        private System.Windows.Forms.Label lblEtiquetaNombreCurso;
         private System.Windows.Forms.TextBox txtBusquedaCurso;
         private System.Windows.Forms.Label lblBusquedaCursoTitulo;
-        private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.Button btnMatricula;
-        private System.Windows.Forms.Label lblNombres;
+        private System.Windows.Forms.Label lblApellidosInstructor;
+        private System.Windows.Forms.Button btnAsignacion;
+        private System.Windows.Forms.Label lblNombresInstructor;
         private System.Windows.Forms.Label lblApellidosEtiqueta;
         private System.Windows.Forms.Label lblNombresEtiqueta;
-        private System.Windows.Forms.DataGridView dvgMatriculados;
-        private System.Windows.Forms.Label lblDatosAlumnoTitulo;
+        private System.Windows.Forms.DataGridView dvgAsignaciones;
+        private System.Windows.Forms.Label lblDatosInstructorTitulo;
         private System.Windows.Forms.Label lblBusquedaInstructoresTitulo;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Button btnBusquedaDni;
