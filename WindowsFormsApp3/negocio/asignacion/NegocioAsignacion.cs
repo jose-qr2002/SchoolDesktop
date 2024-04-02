@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,11 @@ namespace WindowsFormsApp3.negocio.asignacion
     public class NegocioAsignacion
     {
         private DatosAsignacion _datosAsignacion = new DatosAsignacion();
+
+        public DataTable obtenerTodasAsignacionesN()
+        {
+            return _datosAsignacion.obtenerTodasAsignaciones();
+        }
 
         public int insertarAsignacionN(EntidadAsignacion asignacion)
         {

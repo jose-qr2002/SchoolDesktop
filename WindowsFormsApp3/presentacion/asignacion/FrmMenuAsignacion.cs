@@ -13,6 +13,7 @@ using WindowsFormsApp3.common.instructor;
 using WindowsFormsApp3.negocio.asignacion;
 using WindowsFormsApp3.negocio.curso;
 using WindowsFormsApp3.negocio.instructor;
+using WindowsFormsApp3.negocio.matricula;
 
 namespace WindowsFormsApp3.presentacion.asignacion
 {  
@@ -28,6 +29,15 @@ namespace WindowsFormsApp3.presentacion.asignacion
         public FrmMenuAsignacion()
         {
             InitializeComponent();
+        }
+
+        private void cargarTodasAsignaciones()
+        {
+            //En caso el DataSource es null, no muestra nada en la grilla
+            dvgAsignaciones.DataSource = _negocioAsignacion.obtenerTodasAsignacionesN();
+            // Ocultamos este dato porque es irrelevante para la vista pero necesario para saber los instructores asignado a cada curso
+            dvgAsignaciones.Columns["id_intructor"].Visible = false;
+            dvgAsignaciones.Columns["id_curso"].Visible = false;
         }
 
         private void btnBusquedaDni_Click(object sender, EventArgs e)
@@ -51,6 +61,7 @@ namespace WindowsFormsApp3.presentacion.asignacion
         {
             cmbAnioAcademico.SelectedIndex = 0;
             cmbTipoBusquedaCurso.SelectedIndex = 0;
+            cargarTodasAsignaciones();
         }
 
         private void btnBuscarCurso_Click(object sender, EventArgs e)

@@ -13,6 +13,26 @@ namespace WindowsFormsApp3.datos.asignacion
 {
     public class DatosAsignacion
     {
+        public DataTable obtenerTodasAsignaciones()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("obtenerTodasAsignaciones", Connection.Singleton.SqlConnetionFactory))
+                {
+                    DataTable dtData = new DataTable();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                    sqlSda.Fill(dtData);
+                    return dtData;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
         public int insertarAsignacion(EntidadAsignacion asignacion)
         {
             try
