@@ -40,5 +40,10 @@ namespace WindowsFormsApp3.negocio.asignacion
             }
             return _datosAsignacion.insertarAsignacion(asignacion);
         }
+
+        public DataTable obtenerAlumnosAsignacionN(EntidadAsignacion asignacion)
+        {
+            return _datosAsignacion.obtenerAlumnosAsignacion(asignacion);
+        }
     }
 }

@@ -199,6 +199,7 @@
             this.dvgAsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgAsignaciones.Size = new System.Drawing.Size(722, 220);
             this.dvgAsignaciones.TabIndex = 27;
+            this.dvgAsignaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgAsignaciones_CellClick);
             // 
             // lblDatosInstructorTitulo
             // 

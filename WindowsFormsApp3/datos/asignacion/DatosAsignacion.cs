@@ -66,5 +66,27 @@ namespace WindowsFormsApp3.datos.asignacion
                 return 0;
             }
         }
+
+        public DataTable obtenerAlumnosAsignacion(EntidadAsignacion asignacion)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("obtenerAlumnosDeAsignacion", Connection.Singleton.SqlConnetionFactory))
+                {
+                    DataTable dtData = new DataTable();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdCurso", asignacion.IdCurso);
+                    cmd.Parameters.AddWithValue("@AnioAcademico", asignacion.AnioAcademico);
+                    SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                    sqlSda.Fill(dtData);
+                    return dtData;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
     }
 }

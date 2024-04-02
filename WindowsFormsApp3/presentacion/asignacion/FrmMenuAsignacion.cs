@@ -26,6 +26,7 @@ namespace WindowsFormsApp3.presentacion.asignacion
         private int id_instructor;
         private int id_curso;
 
+        EntidadAsignacion asignacionSeleccionada = new EntidadAsignacion();
         public FrmMenuAsignacion()
         {
             InitializeComponent();
@@ -106,6 +107,35 @@ namespace WindowsFormsApp3.presentacion.asignacion
 
                 MessageBox.Show("Matricula Ingresada");
             }
+        }
+
+        private void dvgAsignaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAsignacion();
+            FrmAlumnosAsignacion frmAlumnosAsignacion = new FrmAlumnosAsignacion(asignacionSeleccionada);
+            if (!frmAlumnosAsignacion.IsDisposed)
+            {
+                frmAlumnosAsignacion.ShowDialog();
+            }
+            
+        }
+
+        private void seleccionarAsignacion()
+        {
+            if (dvgAsignaciones.Rows.Count == 0)
+            {
+                return;
+            }
+
+            string id = dvgAsignaciones.CurrentRow.Cells["id"].Value.ToString();
+            string id_instructorseleccionado = dvgAsignaciones.CurrentRow.Cells["id_intructor"].Value.ToString();
+            string id_curso = dvgAsignaciones.CurrentRow.Cells["id_curso"].Value.ToString();
+            string anio_academico = dvgAsignaciones.CurrentRow.Cells["Año academico"].Value.ToString();
+
+            asignacionSeleccionada.Id = Convert.ToInt32(id);
+            asignacionSeleccionada.IdInstructor = Convert.ToInt32(id_instructorseleccionado);
+            asignacionSeleccionada.IdCurso = Convert.ToInt32(id_curso);
+            asignacionSeleccionada.AnioAcademico = anio_academico;
         }
     }
 }
