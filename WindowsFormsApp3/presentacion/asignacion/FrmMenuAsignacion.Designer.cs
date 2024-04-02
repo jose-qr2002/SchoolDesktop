@@ -230,6 +230,7 @@
             this.btnBusquedaDni.TabIndex = 23;
             this.btnBusquedaDni.Text = "Buscar";
             this.btnBusquedaDni.UseVisualStyleBackColor = true;
+            this.btnBusquedaDni.Click += new System.EventHandler(this.btnBusquedaDni_Click);
             // 
             // FrmMenuAsignacion
             // 
