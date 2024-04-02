@@ -91,6 +91,7 @@
             this.btnBuscarCurso.TabIndex = 38;
             this.btnBuscarCurso.Text = "Buscar";
             this.btnBuscarCurso.UseVisualStyleBackColor = true;
+            this.btnBuscarCurso.Click += new System.EventHandler(this.btnBuscarCurso_Click);
             // 
             // cmbTipoBusquedaCurso
             // 

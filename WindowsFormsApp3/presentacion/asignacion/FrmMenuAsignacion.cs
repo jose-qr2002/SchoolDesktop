@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.common.curso;
 using WindowsFormsApp3.common.instructor;
+using WindowsFormsApp3.negocio.curso;
 using WindowsFormsApp3.negocio.instructor;
 
 namespace WindowsFormsApp3.presentacion.asignacion
@@ -15,8 +17,10 @@ namespace WindowsFormsApp3.presentacion.asignacion
     public partial class FrmMenuAsignacion : Form
     {
         private NegocioInstructor _negocioInstructor = new NegocioInstructor();
+        private NegocioCurso _negocioCurso = new NegocioCurso();
         // IDS
         private int id_instructor;
+        private int id_curso;
 
         public FrmMenuAsignacion()
         {
@@ -44,6 +48,28 @@ namespace WindowsFormsApp3.presentacion.asignacion
         {
             cmbAnioAcademico.SelectedIndex = 0;
             cmbTipoBusquedaCurso.SelectedIndex = 0;
+        }
+
+        private void btnBuscarCurso_Click(object sender, EventArgs e)
+        {
+            string parametroCurso = txtBusquedaCurso.Text;
+            ETipoBusquedaCurso tipo = new ETipoBusquedaCurso();
+            switch (cmbTipoBusquedaCurso.SelectedIndex)
+            {
+                case 0: tipo = ETipoBusquedaCurso.Codigo; break;
+                case 1: tipo = ETipoBusquedaCurso.Nombre; break;
+            }
+            DataTable resultado = _negocioCurso.BuscarCursoByTipoAndParametroN(tipo, parametroCurso);
+            if (resultado.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron resultados");
+                lblNombreCurso.Text = "N/A";
+                id_curso = 0;
+                return;
+            }
+            MessageBox.Show("Curso Encontrado");
+            id_curso = int.Parse(resultado.Rows[0]["id"].ToString());
+            lblNombreCurso.Text = resultado.Rows[0]["nombre"].ToString();
         }
     }
 }
