@@ -52,6 +52,9 @@
             // 
             // cmbAnioAcademico
             // 
+            this.cmbAnioAcademico.AutoCompleteCustomSource.AddRange(new string[] {
+            "2024-I",
+            "2024-II"});
             this.cmbAnioAcademico.FormattingEnabled = true;
             this.cmbAnioAcademico.Items.AddRange(new object[] {
             "2024-I",
@@ -258,6 +261,7 @@
             this.Controls.Add(this.btnBusquedaDni);
             this.Name = "FrmMenuAsignacion";
             this.Text = "Menu Asignacion";
+            this.Shown += new System.EventHandler(this.FrmMenuAsignacion_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dvgAsignaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -39,5 +39,11 @@ namespace WindowsFormsApp3.presentacion.asignacion
             id_instructor = Int32.Parse(instructores.Rows[0]["id"].ToString());
             MessageBox.Show("Se encontro un instructor");
         }
+
+        private void FrmMenuAsignacion_Shown(object sender, EventArgs e)
+        {
+            cmbAnioAcademico.SelectedIndex = 0;
+            cmbTipoBusquedaCurso.SelectedIndex = 0;
+        }
     }
 }
