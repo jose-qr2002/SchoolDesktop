@@ -156,6 +156,7 @@
             this.btnAsignacion.TabIndex = 31;
             this.btnAsignacion.Text = "Asignar";
             this.btnAsignacion.UseVisualStyleBackColor = true;
+            this.btnAsignacion.Click += new System.EventHandler(this.btnAsignacion_Click);
             // 
             // lblNombresInstructor
             // 

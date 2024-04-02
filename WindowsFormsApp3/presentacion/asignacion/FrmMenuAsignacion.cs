@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp3.common.asignacion;
 using WindowsFormsApp3.common.curso;
 using WindowsFormsApp3.common.instructor;
+using WindowsFormsApp3.negocio.asignacion;
 using WindowsFormsApp3.negocio.curso;
 using WindowsFormsApp3.negocio.instructor;
 
@@ -18,6 +20,7 @@ namespace WindowsFormsApp3.presentacion.asignacion
     {
         private NegocioInstructor _negocioInstructor = new NegocioInstructor();
         private NegocioCurso _negocioCurso = new NegocioCurso();
+        private NegocioAsignacion _negocioAsignacion = new NegocioAsignacion();
         // IDS
         private int id_instructor;
         private int id_curso;
@@ -70,6 +73,28 @@ namespace WindowsFormsApp3.presentacion.asignacion
             MessageBox.Show("Curso Encontrado");
             id_curso = int.Parse(resultado.Rows[0]["id"].ToString());
             lblNombreCurso.Text = resultado.Rows[0]["nombre"].ToString();
+        }
+
+        private void btnAsignacion_Click(object sender, EventArgs e)
+        {
+            EntidadAsignacion nuevaAsignacion = new EntidadAsignacion();
+            nuevaAsignacion.IdInstructor = id_instructor;
+            nuevaAsignacion.IdCurso = id_curso;
+            nuevaAsignacion.AnioAcademico = cmbAnioAcademico.Text;
+            int resultado = _negocioAsignacion.insertarAsignacionN(nuevaAsignacion);
+            if (resultado != 0)
+            {
+                id_instructor = 0;
+                id_curso = 0;
+                cmbAnioAcademico.SelectedIndex = 0;
+                lblNombresInstructor.Text = "N/A";
+                lblApellidosInstructor.Text = "M/A";
+                lblNombreCurso.Text = "N/A";
+                txtBusquedaCurso.Text = "";
+                txtDni.Text = "";
+
+                MessageBox.Show("Matricula Ingresada");
+            }
         }
     }
 }
