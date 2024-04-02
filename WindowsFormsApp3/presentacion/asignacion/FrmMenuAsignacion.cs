@@ -106,6 +106,7 @@ namespace WindowsFormsApp3.presentacion.asignacion
                 txtDni.Text = "";
 
                 MessageBox.Show("Matricula Ingresada");
+                cargarTodasAsignaciones();
             }
         }
 
