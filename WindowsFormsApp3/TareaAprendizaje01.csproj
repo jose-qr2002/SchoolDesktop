@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="common\alumno\ETipoBusquedaAlumno.cs" />
+    <Compile Include="common\asignacion\EntidadAsignacion.cs" />
     <Compile Include="common\Connection.cs" />
     <Compile Include="common\curso\EntidadCurso.cs" />
     <Compile Include="common\curso\ETipoBusquedaCurso.cs" />
