@@ -249,18 +249,20 @@ BEGIN
 		nombre VARCHAR(50),
 		ciclo varchar(4),
 		carrera varchar(50),
+		fechaInicio date,
+		fechaFinalizacion date,
 	)
 
-	DECLARE @id int, @codigo varchar(50), @nombre varchar(50), @ciclo varchar(4), @carrera varchar(50)
-	DECLARE cur_cursos cursor for SELECT id, codigo, nombre, ciclo, carrera FROM Curso;
+	DECLARE @id int, @codigo varchar(50), @nombre varchar(50), @ciclo varchar(4), @carrera varchar(50), @fechaInicio date, @fechaFinalizacion date;
+	DECLARE cur_cursos cursor for SELECT * FROM Curso;
 	
 	OPEN cur_cursos;
-	FETCH NEXT FROM cur_cursos into @id, @codigo, @nombre, @ciclo, @carrera
+	FETCH NEXT FROM cur_cursos into @id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion
 
 	WHILE @@FETCH_STATUS = 0
 	BEGIN
-		INSERT INTO #TempCursos VALUES (@id, @codigo, @nombre, @ciclo, @carrera);
-		FETCH NEXT FROM cur_cursos INTO @id, @codigo, @nombre, @ciclo, @carrera;
+		INSERT INTO #TempCursos VALUES (@id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion);
+		FETCH NEXT FROM cur_cursos INTO @id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion;
 	END
 
     CLOSE cur_cursos;
