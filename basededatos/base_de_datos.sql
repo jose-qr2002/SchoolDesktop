@@ -237,14 +237,38 @@ END
 GO
 
 -- Procedimientos Cursos
+-- Forzando procedimiento a usar cursores
 CREATE PROCEDURE obtenerTodosCursos  
 AS  
 BEGIN  
-    
     SET NOCOUNT ON;
 
-    SELECT * from Curso ORDER BY id DESC;
+	CREATE TABLE #TempCursos (
+		id INT,
+		codigo VARCHAR(50),
+		nombre VARCHAR(50),
+		ciclo varchar(4),
+		carrera varchar(50),
+	)
 
+	DECLARE @id int, @codigo varchar(50), @nombre varchar(50), @ciclo varchar(4), @carrera varchar(50)
+	DECLARE cur_cursos cursor for SELECT id, codigo, nombre, ciclo, carrera FROM Curso;
+	
+	OPEN cur_cursos;
+	FETCH NEXT FROM cur_cursos into @id, @codigo, @nombre, @ciclo, @carrera
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		INSERT INTO #TempCursos VALUES (@id, @codigo, @nombre, @ciclo, @carrera);
+		FETCH NEXT FROM cur_cursos INTO @id, @codigo, @nombre, @ciclo, @carrera;
+	END
+
+    CLOSE cur_cursos;
+	DEALLOCATE cur_cursos;
+
+	SELECT * FROM #TempCursos;
+
+	DROP TABLE #TempCursos;
 END  
 GO
 
