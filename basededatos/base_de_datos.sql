@@ -1,13 +1,13 @@
 USE Senati
 GO
-
+-- Agregamos restriccion unique, un nombre de usuario puede ser unico
 CREATE TABLE Usuario(  
     id int IDENTITY(1,1) NOT NULL PRIMARY KEY,  
-    usuario varchar(50) NOT NULL,  
+    usuario varchar(50) NOT NULL UNIQUE,  
     contrasenia varchar(50) NOT NULL  
 )
 GO
-
+-- TODOS LOS CAMPOS SON NOT NULL
 CREATE TABLE Alumno(
 	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	dni varchar(8) NOT NULL,
@@ -17,6 +17,7 @@ CREATE TABLE Alumno(
 )
 GO
 
+-- Agregando restriccion check en sexo Y restriccion defaul en salario
 CREATE TABLE Instructor(
 	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	dni varchar(8) NOT NULL,
@@ -25,22 +26,23 @@ CREATE TABLE Instructor(
 	telefono varchar(9) NOT NULL,
 	direccion varchar(100) NOT NULL,
 	fechaNacimiento date NOT NULL,
-	sexo char(1) NOT NULL,
+	sexo char(1) NOT NULL CHECK (sexo IN ('M', 'F')),
 	especialidad varchar(100) NOT NULL,
 	titulo varchar(50) NOT NULL,
-	salario decimal(10, 2) NOT NULL,
+	salario decimal(10, 2) NOT NULL DEFAULT 0,
 	CONSTRAINT uc_DNI_INSTRUCTOR UNIQUE (dni)
 )
 GO
-
+-- Agregando restriccion UNIQUE al campo codigo y restricción check en el campo ciclo
 CREATE TABLE Curso(
 	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	codigo varchar(50) NOT NULL,
 	nombre varchar(50) NOT NULL,
-	ciclo varchar(4) NOT NULL,
+	ciclo varchar(4) NOT NULL CHECK (ciclo IN ('I','II','III','IV','V','VI','VII','VIII','IX','X')),
 	carrera varchar(50) NOT NULL,
 	fechaInicio date NOT NULL,
 	fechaFinalizacion date NOT NULL,
+	CONSTRAINT uc_CODIGO_CURSO UNIQUE (codigo)
 )
 GO
 
