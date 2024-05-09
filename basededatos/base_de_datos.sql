@@ -319,6 +319,7 @@ BEGIN
 END
 GO
 
+-- Usamos cursores en este procedimiento para optimizar la consulta SELECT
 CREATE PROCEDURE buscarCursoByTipoAndParametro
 (
 	@Tipo int,
@@ -329,21 +330,50 @@ BEGIN
     
     SET NOCOUNT ON;
 
+	CREATE TABLE #TempCursos (
+		id INT,
+		codigo VARCHAR(50),
+		nombre VARCHAR(50),
+		ciclo varchar(4),
+		carrera varchar(50),
+		fechaInicio date,
+		fechaFinalizacion date,
+	)
+
+	DECLARE @id int, @codigo varchar(50), @nombre varchar(50), @ciclo varchar(4), @carrera varchar(50), @fechaInicio date, @fechaFinalizacion date;
+	
 	-- CODIGO
 	IF @Tipo = 1  
     BEGIN
-		SELECT * FROM Curso WHERE codigo LIKE '%'+@Parametro+'%' ORDER BY id DESC;
+		DECLARE cur_cursos cursor for SELECT * FROM Curso WHERE codigo LIKE '%'+@Parametro+'%' ORDER BY id DESC;
 	END
 	-- NOMBRE
     IF @Tipo = 2  
     BEGIN
-		SELECT * FROM Curso WHERE nombre LIKE '%'+@Parametro+'%' ORDER BY id DESC;
+		DECLARE cur_cursos cursor for SELECT * FROM Curso WHERE nombre LIKE '%'+@Parametro+'%' ORDER BY id DESC;
 	END
 	-- CARRERA
 	IF @Tipo = 3  
     BEGIN
-		SELECT * FROM Curso WHERE carrera LIKE '%'+@Parametro+'%' ORDER BY id DESC;
+		DECLARE cur_cursos cursor for SELECT * FROM Curso WHERE carrera LIKE '%'+@Parametro+'%' ORDER BY id DESC;
 	END
+	
+	
+	OPEN cur_cursos;
+	FETCH NEXT FROM cur_cursos into @id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		INSERT INTO #TempCursos VALUES (@id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion);
+		FETCH NEXT FROM cur_cursos INTO @id, @codigo, @nombre, @ciclo, @carrera, @fechaInicio, @fechaFinalizacion;
+	END
+
+    CLOSE cur_cursos;
+	DEALLOCATE cur_cursos;
+
+	SELECT * FROM #TempCursos;
+
+	DROP TABLE #TempCursos;
 
 END  
 GO
