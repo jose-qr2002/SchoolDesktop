@@ -43,9 +43,12 @@ namespace WindowsFormsApp3.negocio.instructor
                 return 0;
             }
             // Direccion
-            if (instructor.Direccion.Length == 0) {
-                MessageBox.Show("Direccion esta vacio");
-                return 0;
+            if (instructor.Direccion != null)
+            {
+                if (instructor.Direccion.Length == 0) {
+                    MessageBox.Show("Direccion esta vacio");
+                    return 0;
+                }
             }
             // Telefono
             if (instructor.Telefono.Length != 9) {
@@ -74,9 +77,12 @@ namespace WindowsFormsApp3.negocio.instructor
                 return 0;
             }
             // Salario
-            if (instructor.Salario < 0) {
-                MessageBox.Show("Ingrese un salario valido");
-                return 0;
+            if (instructor.Salario != null)
+            {
+                if (instructor.Salario < 0) {
+                    MessageBox.Show("Ingrese un salario valido");
+                    return 0;
+                }
             }
 
             int numRes = _datosInstructor.InsertarInstructor(instructor);
@@ -160,9 +166,9 @@ namespace WindowsFormsApp3.negocio.instructor
                 return 0;
             }
             // Salario
-            if (instructor.Salario < 0)
+            if (instructor.Salario.ToString() == "")
             {
-                MessageBox.Show("Ingrese un salario valido");
+                MessageBox.Show("Ingrese un salario valido" + instructor.Salario.ToString());
                 return 0;
             }
 

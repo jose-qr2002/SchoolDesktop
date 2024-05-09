@@ -19,7 +19,7 @@ namespace WindowsFormsApp3.common.instructor
         public String Sexo { get; set; }
         public String Especialidad { get; set; }
         public String Titulo { get; set; }
-        public Double Salario { get; set; }
+        public Double? Salario { get; set; }
 
         // Constructor
         public EntidadInstructor(string dni, string nombres, string apellidos)
@@ -35,7 +35,7 @@ namespace WindowsFormsApp3.common.instructor
             Nombres = nombres;
             Apellidos = apellidos;
         }
-        public EntidadInstructor(string dni, string nombres, string apellidos, string telefono, string direccion, DateTime fechaNac, string sexo, string especialidad, string titulo, double salario)
+        public EntidadInstructor(string dni, string nombres, string apellidos, string telefono, string direccion, DateTime fechaNac, string sexo, string especialidad, string titulo, double? salario)
         {
             Dni = dni;
             Nombres = nombres;

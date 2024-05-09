@@ -29,12 +29,12 @@ namespace WindowsFormsApp3.datos.instructor
                     cmd.Parameters.AddWithValue("@Nombres", instructor.Nombres);
                     cmd.Parameters.AddWithValue("@Apellidos", instructor.Apellidos);
                     cmd.Parameters.AddWithValue("@Telefono", instructor.Telefono);
-                    cmd.Parameters.AddWithValue("@Direccion", instructor.Direccion);
+                    cmd.Parameters.AddWithValue("@Direccion", (object)instructor.Direccion ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@FechaNac", instructor.FechaNac);
                     cmd.Parameters.AddWithValue("@Sexo", instructor.Sexo);
                     cmd.Parameters.AddWithValue("@Especialidad", instructor.Especialidad);
                     cmd.Parameters.AddWithValue("@Titulo", instructor.Titulo);
-                    cmd.Parameters.AddWithValue("@Salario", instructor.Salario);
+                    cmd.Parameters.AddWithValue("@Salario", (object)instructor.Salario ?? DBNull.Value);
                     int numRes = cmd.ExecuteNonQuery();
                     return numRes;
 

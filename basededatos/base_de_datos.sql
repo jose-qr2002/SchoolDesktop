@@ -24,7 +24,7 @@ CREATE TABLE Instructor(
 	nombre varchar(50) NOT NULL,
 	apellido varchar(50) NOT NULL,
 	telefono varchar(9) NOT NULL,
-	direccion varchar(100) NOT NULL,
+	direccion varchar(100) NOT NULL DEFAULT 'Sin dirección',
 	fechaNacimiento date NOT NULL,
 	sexo char(1) NOT NULL CHECK (sexo IN ('M', 'F')),
 	especialidad varchar(100) NOT NULL,
@@ -405,12 +405,19 @@ CREATE PROCEDURE insertarInstructor
 	@Salario decimal(10,2)
 )   
 AS  
-BEGIN  
-    
-    SET NOCOUNT OFF;
-
-    INSERT INTO Instructor(dni,nombre,apellido,telefono,direccion,fechaNacimiento,sexo,especialidad,titulo,salario) VALUES(@Dni,@Nombres,@Apellidos,@Telefono,@Direccion,@FechaNac,@Sexo,@Especialidad,@Titulo,@Salario)
-
+BEGIN
+	IF @Salario IS NULL AND @Direccion IS NULL
+	BEGIN
+		INSERT INTO Instructor(dni,nombre,apellido,telefono,direccion,fechaNacimiento,sexo,especialidad,titulo,salario) VALUES(@Dni,@Nombres,@Apellidos,@Telefono,default,@FechaNac,@Sexo,@Especialidad,@Titulo, default)
+	END
+	ELSE IF @Salario IS NULL
+	BEGIN
+		INSERT INTO Instructor(dni,nombre,apellido,telefono,direccion,fechaNacimiento,sexo,especialidad,titulo,salario) VALUES(@Dni,@Nombres,@Apellidos,@Telefono,@Direccion,@FechaNac,@Sexo,@Especialidad,@Titulo,default)
+	END
+	ELSE IF @Direccion IS NULL
+	BEGIN
+		INSERT INTO Instructor(dni,nombre,apellido,telefono,direccion,fechaNacimiento,sexo,especialidad,titulo,salario) VALUES(@Dni,@Nombres,@Apellidos,@Telefono,default,@FechaNac,@Sexo,@Especialidad,@Titulo,@Salario)
+	END
 END
 GO
 

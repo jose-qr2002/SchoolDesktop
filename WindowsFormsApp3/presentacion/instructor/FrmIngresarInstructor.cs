@@ -29,7 +29,25 @@ namespace WindowsFormsApp3.presentacion.instructor
         {
             try
             {
-                EntidadInstructor instructor = new EntidadInstructor(txtDni.Text, txtNombres.Text, txtApellidos.Text, txtTelefono.Text, txtDireccion.Text, timeFechaNac.Value, cbSexo.Text, txtEspecialidad.Text, txtTitulo.Text, Double.Parse(txtSalario.Text));
+                // Valores con restriccion default
+                double? salario;
+                string direccion;
+                if (txtSalario.Text.Trim() == "")
+                {
+                    salario = null;
+                } else
+                {
+                    salario = Double.Parse(txtSalario.Text);
+                }
+                
+                if (txtDireccion.Text.Trim() == "") {
+                    direccion = null;
+                } else
+                {
+                    direccion = txtDireccion.Text;
+                }
+
+                EntidadInstructor instructor = new EntidadInstructor(txtDni.Text, txtNombres.Text, txtApellidos.Text, txtTelefono.Text, direccion, timeFechaNac.Value, cbSexo.Text, txtEspecialidad.Text, txtTitulo.Text, salario);
                 int num = _negocioInstructor.InsertarInstructorN(instructor);
                 if (num != 0)
                 {
