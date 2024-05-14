@@ -1,4 +1,7 @@
-USE Senati
+CREATE DATABASE colegiojose;
+GO
+
+USE colegiojose
 GO
 -- Agregamos restriccion unique, un nombre de usuario puede ser unico
 CREATE TABLE Usuario(  
@@ -583,4 +586,34 @@ BEGIN
 	WHERE M.id_curso = @IdCurso AND M.anio_acad = @AnioAcademico;
 
 END  
+GO
+
+-- Procedimientos Reportes
+CREATE PROCEDURE ObtenerReporteTotalMatriculados
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT ISNULL(Curso.nombre, 'TOTAL') Curso, 
+	ISNULL(Matricula.anio_acad, 'TOTAL') 'Año Academico', 
+	COUNT(*) Matriculados 
+	FROM Curso 
+	INNER JOIN Matricula on Matricula.id_curso = Curso.id 
+	GROUP BY CUBE (Curso.nombre, Matricula.anio_acad);
+END
+GO
+
+CREATE PROCEDURE ObtenerReporteTotalAsignados
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT ISNULL(Instructor.nombre, 'TOTAL') Instructor, 
+	ISNULL(Asignacion.anio_acad , 'TOTAL') 'Año Academico', 
+	COUNT(*) Asignados 
+	FROM Instructor 
+	INNER JOIN Asignacion on Asignacion.id_instructor = Instructor.id 
+	GROUP BY CUBE (Instructor.nombre, Asignacion.anio_acad);
+
+END
 GO
