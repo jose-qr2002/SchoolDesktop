@@ -51,6 +51,7 @@
             this.dvgReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgReporte.Size = new System.Drawing.Size(472, 237);
             this.dvgReporte.TabIndex = 7;
+            this.dvgReporte.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgReporte_CellFormatting);
             // 
             // grpReportes
             // 

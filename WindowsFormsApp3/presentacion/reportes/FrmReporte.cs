@@ -34,5 +34,18 @@ namespace WindowsFormsApp3.presentacion.reportes
         {
             dvgReporte.DataSource = _negocioReporte.ObtenerReporteTotalAsignadosN();
         }
+
+        private void dvgReporte_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCell cell = dvgReporte.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            // Verificar si el valor de la celda es TOTAL
+            if (cell.Value != null && cell.Value.ToString().Equals("TOTAL", StringComparison.OrdinalIgnoreCase))
+            {
+                // Cambiar el estilo de la fuente de la celda a rojo y negrita
+                cell.Style.ForeColor = Color.Red;
+                cell.Style.Font = new Font(dvgReporte.Font, FontStyle.Bold);
+            }
+        }
     }
 }
