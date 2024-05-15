@@ -617,3 +617,19 @@ BEGIN
 
 END
 GO
+
+USE colegiojose;
+CREATE LOGIN usuario15 WITH PASSWORD = 'usuario15' , CHECK_POLICY = OFF;
+GO
+
+USE colegiojose;
+CREATE USER usuario15 FOR LOGIN usuario15;
+GO
+
+USE master;
+GRANT CONNECT SQL TO usuario15;
+GO
+
+USE colegiojose;
+EXEC sp_addrolemember 'db_owner', 'usuario15';
+GO

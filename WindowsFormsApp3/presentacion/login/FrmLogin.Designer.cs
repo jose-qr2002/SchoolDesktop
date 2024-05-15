@@ -92,7 +92,8 @@
             this.txtConeccion.Name = "txtConeccion";
             this.txtConeccion.Size = new System.Drawing.Size(542, 20);
             this.txtConeccion.TabIndex = 5;
-            this.txtConeccion.Text = "Data Source=.\\SQLEXPRESS;Database=colegiojose;Integrated Security=True;";
+            this.txtConeccion.Text = "Data Source=localhost,1433;Database=colegiojose;User ID=usuario15;Password=usuari" +
+    "o15;";
             // 
             // label3
             // 
