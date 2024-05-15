@@ -170,6 +170,12 @@
     <Compile Include="presentacion\matricula\FrmMenuMatricula.Designer.cs">
       <DependentUpon>FrmMenuMatricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\reportes\FrmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\reportes\FrmReporte.Designer.cs">
+      <DependentUpon>FrmReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="presentacion\alumno\FrmBuscarAlumno.resx">
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\matricula\FrmMenuMatricula.resx">
       <DependentUpon>FrmMenuMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\reportes\FrmReporte.resx">
+      <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -33,6 +33,7 @@
             this.btnCurso = new System.Windows.Forms.Button();
             this.btnMatricula = new System.Windows.Forms.Button();
             this.btnAsignacion = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlumno
@@ -85,11 +86,22 @@
             this.btnAsignacion.UseVisualStyleBackColor = true;
             this.btnAsignacion.Click += new System.EventHandler(this.btnAsignacion_Click);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.Location = new System.Drawing.Point(310, 164);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(109, 46);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "REPORTES";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnAsignacion);
             this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.btnCurso);
@@ -111,5 +123,6 @@
         private System.Windows.Forms.Button btnCurso;
         private System.Windows.Forms.Button btnMatricula;
         private System.Windows.Forms.Button btnAsignacion;
+        private System.Windows.Forms.Button btnReportes;
     }
 }

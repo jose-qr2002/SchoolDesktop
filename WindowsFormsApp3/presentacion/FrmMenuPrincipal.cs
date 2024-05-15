@@ -12,6 +12,7 @@ using WindowsFormsApp3.presentacion.asignacion;
 using WindowsFormsApp3.presentacion.curso;
 using WindowsFormsApp3.presentacion.instructor;
 using WindowsFormsApp3.presentacion.matricula;
+using WindowsFormsApp3.presentacion.reportes;
 
 namespace WindowsFormsApp3.presentacion
 {
@@ -66,6 +67,12 @@ namespace WindowsFormsApp3.presentacion
         {
             FrmMenuAsignacion frmMenuAsignacion = new FrmMenuAsignacion();
             frmMenuAsignacion.ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReporte frmReporte = new FrmReporte();
+            frmReporte.ShowDialog();
         }
     }
 }

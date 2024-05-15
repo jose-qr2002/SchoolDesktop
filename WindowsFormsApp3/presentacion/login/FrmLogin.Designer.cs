@@ -92,7 +92,7 @@
             this.txtConeccion.Name = "txtConeccion";
             this.txtConeccion.Size = new System.Drawing.Size(542, 20);
             this.txtConeccion.TabIndex = 5;
-            this.txtConeccion.Text = "Server=localhost;Database=colegiojose;Trusted_Connection=True";
+            this.txtConeccion.Text = "Data Source=.\\SQLEXPRESS;Database=colegiojose;Integrated Security=True;";
             // 
             // label3
             // 
