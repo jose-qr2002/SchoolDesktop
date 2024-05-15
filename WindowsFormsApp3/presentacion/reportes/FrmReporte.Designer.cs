@@ -30,8 +30,8 @@
         {
             this.dvgReporte = new System.Windows.Forms.DataGridView();
             this.grpReportes = new System.Windows.Forms.GroupBox();
-            this.btnTotalMatriculados = new System.Windows.Forms.Button();
             this.btnTotalAsignados = new System.Windows.Forms.Button();
+            this.btnTotalMatriculados = new System.Windows.Forms.Button();
             this.btnSalirReportes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgReporte)).BeginInit();
             this.grpReportes.SuspendLayout();
@@ -64,15 +64,6 @@
             this.grpReportes.TabStop = false;
             this.grpReportes.Text = "Reportes";
             // 
-            // btnTotalMatriculados
-            // 
-            this.btnTotalMatriculados.Location = new System.Drawing.Point(57, 33);
-            this.btnTotalMatriculados.Name = "btnTotalMatriculados";
-            this.btnTotalMatriculados.Size = new System.Drawing.Size(138, 43);
-            this.btnTotalMatriculados.TabIndex = 8;
-            this.btnTotalMatriculados.Text = "Total Matriculados";
-            this.btnTotalMatriculados.UseVisualStyleBackColor = true;
-            // 
             // btnTotalAsignados
             // 
             this.btnTotalAsignados.Location = new System.Drawing.Point(57, 99);
@@ -81,6 +72,17 @@
             this.btnTotalAsignados.TabIndex = 9;
             this.btnTotalAsignados.Text = "Total Asignaciones";
             this.btnTotalAsignados.UseVisualStyleBackColor = true;
+            this.btnTotalAsignados.Click += new System.EventHandler(this.btnTotalAsignados_Click);
+            // 
+            // btnTotalMatriculados
+            // 
+            this.btnTotalMatriculados.Location = new System.Drawing.Point(57, 33);
+            this.btnTotalMatriculados.Name = "btnTotalMatriculados";
+            this.btnTotalMatriculados.Size = new System.Drawing.Size(138, 43);
+            this.btnTotalMatriculados.TabIndex = 8;
+            this.btnTotalMatriculados.Text = "Total Matriculados";
+            this.btnTotalMatriculados.UseVisualStyleBackColor = true;
+            this.btnTotalMatriculados.Click += new System.EventHandler(this.btnTotalMatriculados_Click);
             // 
             // btnSalirReportes
             // 

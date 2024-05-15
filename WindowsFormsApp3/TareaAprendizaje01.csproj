@@ -62,11 +62,13 @@
     <Compile Include="common\alumno\EntidadAlumno.cs" />
     <Compile Include="common\login\EntidadLogin.cs" />
     <Compile Include="datos\matricula\DatosMatricula.cs" />
+    <Compile Include="datos\reporte\DatosReporte.cs" />
     <Compile Include="negocio\alumno\NegocioAlumno.cs" />
     <Compile Include="negocio\asignacion\NegocioAsignacion.cs" />
     <Compile Include="negocio\curso\NegocioCurso.cs" />
     <Compile Include="negocio\instructor\NegocioInstructor.cs" />
     <Compile Include="negocio\matricula\NegocioMatricula.cs" />
+    <Compile Include="negocio\reporte\NegocioReporte.cs" />
     <Compile Include="presentacion\alumno\FrmBuscarAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
